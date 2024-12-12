@@ -27,7 +27,7 @@ ul{
 
 table {
     color: rgb(216, 97, 216);
-    /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     border-collapse: collapse;
     table-layout: fixed;
@@ -36,7 +36,5 @@ table {
 
 td {
 
-    /*border: 5px, black;*/
-    border: solid 2px rgba(174, 35, 174, 0.2);
-
+    border: 5px, black;
 }

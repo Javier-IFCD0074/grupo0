@@ -14,7 +14,8 @@ body {
 }
 
 .container {
-	border: solid 3px rgba(255,255,255,0.2);
+	/*border: solid 3px rgba(255,255,255,0.2);*/
+	border: solid 8px rgba(255,255,255,0.2);
 }
 
 table {
@@ -35,8 +36,10 @@ th {
 }
 
 td {
-	padding: 15px;
-	border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+	border: solid 1px rgba(255, 255, 255, 0.2);
+
+	/*padding: 15px;
+	border-bottom: solid 1px rgba(255, 255, 255, 0.2);*/
 }
 
 

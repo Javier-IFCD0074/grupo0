@@ -36,7 +36,8 @@ table {
 
 td {
 
-    border: 5px, black;
+    /*border: solid 5px rgba(255, 255, 255, 0.2);*/
+    border: 5px black;
 
 
 }

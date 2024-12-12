@@ -1,26 +1,26 @@
 body{
     color: white;
-    background-color: rgb(48, 48, 48);
+    background-color:  white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
 
 h1{
     color: rgb(50, 180, 180);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
 }
 
 h3{
     color: rgb(50, 180, 180);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
 }
 
 ul{
     color: rgb(190, 93, 190);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
     font-style: italic, bold;
 }
 
@@ -29,6 +29,14 @@ table {
     color: rgb(216, 97, 216);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
-    border: 1;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+}
+
+td {
+
+    border: 5px, black;
+
 
 }

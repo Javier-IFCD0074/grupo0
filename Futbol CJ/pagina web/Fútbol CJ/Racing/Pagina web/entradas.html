@@ -6,7 +6,7 @@
     <title>Real Racing Club de Santander</title>
 	<link rel="icon" href="https://i.imgur.com/qkiiv0u.png" type="image/png">
 	<link rel="icon" href="https://i.imgur.com/qkiiv0u.png" type="image/png">
-    <link href="../style tienda.css"rel="stylesheet">
+    <link href="style entradas.css"rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!--style>
         body {
@@ -19,8 +19,7 @@
             flex-direction: column;
             font-family: 'Arial', sans-serif;
         }
-
-        /* Navbar */
+    /* Navbar */
         .navbar {
             background-color: #004225;
             justify-content: center;
@@ -67,44 +66,55 @@
         }
 
         .navbar-nav .nav-link:hover {
-            color: #dcdcdc;
+            color: #ff0000;
         }
+
         /* Fondo con imagen */
-        .content-container {
+/* Cambios en la clase .content-container */
+.content-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
     justify-content: center;
     height: 100vh;
-    background-image: url('https://statics-maker.llt-services.com/rac/images/2024/03/06/xlarge/dff1691e-31da-4cf7-ad4f-725dffce5328-816.jpg'); /* Nueva imagen de fondo */
-    background-position: center;
+    background-color: transparent;
+    background-image: url('https://s2.sportstatics.com/relevo/www/multimedia/202405/19/media/cortadas/racing-santander-grada-RLcuKUgpNp33IYwYCUXR2YO-1200x648@Relevo.jpg');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     position: relative;
     text-align: center;
+    overflow: hidden;
+   
 }
 
-
-        /* Overlay oscuro para mejorar contraste */
-        .overlay {
+/* Agregar una capa de sombra circular */
+.content-container::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Aumentada la opacidad */
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
+
+/* Resto del código permanece igual */
+
+
 
 
         /* Asegura que los elementos dentro del círculo se escalen */
         .content-wrapper {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-        }
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+}
+
+
 
         /* Estilo del escudo y nombre del equipo alineado */
         .team-header {
@@ -125,27 +135,34 @@
             letter-spacing: 2px;
             font-family: system-ui;
             margin-top: 26px;
-            color: white; /* Asegura que se vea bien en el fondo */
+            color: rgb(255, 255, 255); /* Asegura que se vea bien en el fondo */
         }
 
   h2 {
-    color: white;
+    color: rgb(255, 255, 255);
     margin-bottom: 40px;
     font-weight: bold;
 }
-        /* Botón de Tienda */
-        .button {
-            background-color: rgba(0, 66, 37, 0.8); /* Verde oscuro con transparencia */
-            color: white;
-            border: 2px solid #004225;
-            padding: 40px 90px; /* Tamaño del botón */
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 10px;
-            border-radius: 10px;
-            transition: background-color 0.3s ease, padding 0.3s ease, font-size 0.3s ease, border 0.3s ease;
+
+        /* Botones más grandes */
+        .button-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
         }
+
+      .button {
+    background-color: rgba(0, 66, 37, 0.6);
+    color: white;
+    border: 2px solid #004225;
+    padding: 40px 90px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, padding 0.3s ease, font-size 0.3s ease, border 0.3s ease;
+}
         .button:hover {
             background-color: rgba(0, 66, 37, 1); /* Más sólido al pasar el mouse */
             border-color: #002914; /* Borde más oscuro */
@@ -153,20 +170,19 @@
 
         /* Producto del club */
         .product-text {
-    color: #ffffff;
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: 1px;
-}
-
-.product-text span {
-    display: block;
-    margin-top: 5px;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-}
-
+            margin-top: 40px;
+            color: #acd6be;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .product-text span {
+            display: block;
+            margin-top: 5px;
+            font-size: 1.6rem; /* Aumentar tamaño del nombre del club */
+            text-transform: uppercase;
+        }
 
         /* Responsividad */
         @media (max-width: 768px) {
@@ -195,6 +211,7 @@
             }
         }
 
+       
         /* Footer */
         .footer {
     background-color: #004225;
@@ -279,7 +296,7 @@
 <body>
 
     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="./img/racingsantander.png" alt="Real Racing Club">
@@ -307,30 +324,26 @@
     </nav>
 
 
-    <!-- Contenido principal con fondo y botón -->
+    <!-- Contenido principal con fondo y botones -->
     <div class="content-container">
-        <div class="overlay"></div> <!-- Overlay para mejorar contraste -->
         <div class="content-wrapper">
             <div class="team-header">
                 <img src="./img/racingsantander.png" alt="Escudo Real Racing Club" class="team-logo">
                 <div class="team-name">Real Racing Club de Santander</div>
             </div>
-            <h2>Visita nuestra tienda oficial</h2>
-            <button class="button" id="tiendaButton">Tienda</button>
-
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const tiendaButton = document.getElementById('tiendaButton');
-                
-                tiendaButton.addEventListener('click', function() {
-                    window.open('https://tienda.realracingclub.es', '_blank');
-                });
-            });
-            </script>
+            <h2>Venta oficial de entradas</h2>
+            <div class="button-row">
+                <button class="button" onclick="windowlocation.href='#'" data-title="Nuevo Abono"><s>Nuevo Abono</s></button>
             
-            <div class="product-text">Un producto de:
-                <span>Real Racing Club De Santander</span>
+                <button class="button" onclick="window.open('https://entradas.realracingclub.es/', '_blank')">Partidos</button>
+
+
             </div>
+            <button class="button" onclick="window.open('https://bstadium.es/tours-originales/tour-el-sardinero-racing-club-de-santander/', '_blank')">Tour</button>
+  
+</div>
+
+           
         </div>
     </div>
 
@@ -362,4 +375,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+    </html>

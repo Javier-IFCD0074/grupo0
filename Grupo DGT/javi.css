@@ -37,7 +37,11 @@ table {
 td {
 
     /*border: 5px, black;*/
+<<<<<<< HEAD
     border: solid 8px rgba(174, 235, 174, 0.2);
     /*border: solid 8px rgb(174, 235, 174);*/
+=======
+    border: solid 2px rgba(174, 235, 174, 0.2);
+>>>>>>> 70c4d75b5bee12354ce08e622ef4d391702facab
 
 }

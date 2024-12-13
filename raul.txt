@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 Hola compañeros
+=======
+Hola compañeros soy Raul no eres yo
+sin conexion
+>>>>>>> f96b13acd2e501d4197d8c04e2cc737cc805fe2f

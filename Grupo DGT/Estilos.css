@@ -1,40 +1,52 @@
 body{
     color: white;
-    background-color:  white;
+    background:linear-gradient(to bottom right, rgb(201, 105, 68), rgb(233, 171, 121), rgb(196, 97, 17));
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 h1{
-    color: rgb(50, 180, 180);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 25px;
+    color: rgb(46, 151, 151);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
 }
 
-h3{
-    color: rgb(50, 180, 180);
-    font-family: 'Times New Roman', Times, serif;
+h2{
+    color: rgb(46, 151, 151);
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    font-style: italic;
 }
 
 ul{
-    color: rgb(190, 93, 190);
+    color: rgb(123, 64, 219);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    font-style: italic, bold;
+    font-style: italic;
+    
 }
 
+li {
+    display: inline-block;
+    margin-right: 10px; 
+  }
 
 table {
-    color: rgb(216, 97, 216);
+    color: rgb(123, 64, 219);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     border-collapse: collapse;
     table-layout: fixed;
+    
 
 }
 
+/*th {
+
+    border: solid 1px white;
+}*/
+
 td {
 
-    border: 5px, black;
+    border: solid 1px white;
 }

@@ -26,7 +26,7 @@ ul{
     
 }
 
-li {
+.elemento_horiz {
     display: inline-block;
     margin-right: 10px; 
   }
@@ -50,3 +50,10 @@ td {
 
     border: solid 1px white;
 }
+
+/* .estilo_Javi {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+
+} */

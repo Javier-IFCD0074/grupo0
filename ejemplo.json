@@ -1,0 +1,28 @@
+[
+    {
+    "Codigo": "20.189.243.G",
+    "Nombre": "Javier",
+    "Apellido": "Salazar",
+    "Profesión": "Profesor",
+    "Edad": 54,
+    "Hijos": ["María", "Sergio", "Miguel", "Esther", { "Mascota": "Gato", "Bebida": "Cocacola"}] 
+    },
+
+    {
+    "Codigo": "Z56435666X",
+    "Nombre": "Ivan Junior",
+    "Apellido": "Quispe",
+    "Edad": 25,
+    "Hijos": [] 
+    },
+
+    {
+        "Codigo": "45677322X",
+        "Nombre": "Ignacio",
+        "Apellido": "Hernando",
+        "Coche": "Seat 127",
+        "Edad": 37,
+        "Hijos": ["Pepin", "Manolita"] 
+        }
+    
+]

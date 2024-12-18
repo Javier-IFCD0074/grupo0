@@ -18,7 +18,7 @@
 
     <button id="Limpiar">Limpiar Usuario</button>
     <button id="LimpiarVideo">Limpiar Video</button>
-    
+    <button id="LimpiarTodo">Limpiar Todo</button>
     
     <script>
         document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
@@ -34,6 +34,8 @@
                 .then(data =>{
                         console.log(data);
                         contenido.innerHTML = `${data.results[0].name.last}`;
+                        contenido.innerHTML += `${persona.first}`;
+                        contenido.innerHTML += `${persona.last}`;
                 })
                 
              
@@ -50,6 +52,14 @@
         }
         document.getElementById("Limpiar").addEventListener("click", ocultarDatosAPI, true);
         function ocultarDatosAPI()
+        {
+
+            contenido.innerHTML ='';
+            imagenes.innerHTML = '';
+            
+        }
+        document.getElementById("LimpiarTodo").addEventListener("click", LimpiarTodoAPI, true);
+        function LimpiarTodoAPI()
         {
 
             contenido.innerHTML ='';

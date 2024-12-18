@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1 Tamara</title>
+</head>
+<body>
+    <button id="mostrar">Mostrar usuario</button>
+    <div id="contenido"></div>
+    <button id="limpiar">Limpiar</button>
+
+<!--<img src="carro.jpg" alt="ejemplo de foto">-->
+
+    <script>
+        document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+        document.getElementById("limpiar").addEventListener("click", borrarDatosAPI, true);
+        let caja = document.querySelector("#contenido");
+
+        function mostrarDatosAPI() 
+        {   
+            console.log('Ha pulsado mostrar usuario');
+
+            fetch("https://randomuser.me/api")
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data);
+                    let persona = data.results[0].name;
+                    console.log(persona);
+                    caja.innerHTML = `${persona.title}`
+                    caja.innerHTML += ` ${persona.first}`
+                    caja.innerHTML += ` ${persona.last} <br>`;
+                
+                let foto = data.results[0].picture.medium;
+                console.log(foto);
+                let imagen= '<img src="carro.jpg" alt="ejemplo de foto">';
+                caja.innerHTML += `${imagen}<br>`;
+                })
+
+            //caja.innerHTML = 'Hola mundo';
+        }
+
+        function mostrarCosas() 
+        {
+            caja.innerHTML = 'Hola ';
+            for(i=0; i<4; i++)
+            {
+                if (i==2)
+                    caja.innerHTML += ' perros <br>';
+                else
+                    caja.innerHTML += ' amigos <br>';
+            }
+        }
+
+        function borrarDatosAPI() 
+        {
+            console.log('Ha pulsado borrar usuario');
+            caja.innerHTML = '';
+        }
+    </script>
+    
+
+</body>
+</html>

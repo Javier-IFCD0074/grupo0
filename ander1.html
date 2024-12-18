@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo num. 1 para trabajar con API</title>
+</head>
+<body>
+    <button id="mostrar">Mostrar Usuario</button>
+    <div id="contenido"></div>
+    <button id="limpiar">Limpiar Usuario</button>
+    <div id="contenido"></div>
+    <script>
+        document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+        let contenido = document.querySelector("#contenido");
+        function mostrarDatosAPI(){contenido.innerHTML = 'Hola mundo';
+        }
+        document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
+        function limpiarDatosAPI (){contenido.innerHTML = "";
+        }
+    </script>
+</body>
+</html>

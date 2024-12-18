@@ -7,8 +7,8 @@
 </head>
 <body>
     <button id="mostrar">Mostrar usuario</button>
-    <div id="contenido"></div>
     <button id="limpiar">Limpiar</button>
+    <div id="contenido"></div>
 
 <!--<img src="carro.jpg" alt="ejemplo de foto">-->
 
@@ -29,11 +29,12 @@
                     console.log(persona);
                     caja.innerHTML = `${persona.title}`
                     caja.innerHTML += ` ${persona.first}`
-                    caja.innerHTML += ` ${persona.last} <br>`;
+                    caja.innerHTML += ` ${persona.last} (la edad es ${data.results[0].dob.age})<br>`;
+                    caja.innerHTML += `<br> Telef:  ${data.results[0].cell}`
                 
-                let foto = data.results[0].picture.medium;
-                console.log(foto);
-                let imagen= '<img src="carro.jpg" alt="ejemplo de foto">';
+                let url_foto = data.results[0].picture.medium;
+                console.log(url_foto);
+                let imagen= `<img src="${url_foto}" alt="ejemplo de foto">`;
                 caja.innerHTML += `${imagen}<br>`;
                 })
 

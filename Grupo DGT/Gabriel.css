@@ -1,0 +1,11 @@
+body{
+
+   background: linear-gradient(to left top, aquamarine, violet );
+   background-repeat: no-repeat;
+   background-size: contain;
+
+}
+button {
+    height: 50px;
+    width: 200px;
+}

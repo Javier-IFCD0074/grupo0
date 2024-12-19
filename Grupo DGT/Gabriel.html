@@ -8,7 +8,7 @@
 </head>
 <body>
     <!--Alo, presidentes, es una prueba para usar api por primera vez-->
-    
+    <center>
     <button id="mostrar">Mostrar usuario</button>
     <button id="Imagen">Ver Imagen</button>
     <button id="Video">Ver video</button>
@@ -17,8 +17,9 @@
     <div id="videos"></div>
 
     <button id="Limpiar">Limpiar Usuario</button>
+    <button id="LimpiarTodo">Limpiar Imagen</button>
     <button id="LimpiarVideo">Limpiar Video</button>
-    <button id="LimpiarTodo">Limpiar Todo</button>
+    </center>
     
     <script>
         document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
@@ -83,9 +84,9 @@
         function LimpiarTodoAPI()
         {
 
-            contenido.innerHTML ='';
+            //contenido.innerHTML ='';
             imagenes.innerHTML = '';
-            videos.innerHTML = '';
+            //videos.innerHTML = '';
         }
         document.getElementById("Imagen").addEventListener("click", VerImagenAPI, true);
         function VerImagenAPI()

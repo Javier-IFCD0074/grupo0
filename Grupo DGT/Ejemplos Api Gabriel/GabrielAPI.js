@@ -5,12 +5,16 @@ function mostrarDatosAPI()
 {
      
     console.log('Ha pulsado mostrar usuario');
-    
+    for(i=0; i<4; i++)
+
     fetch("https://randomuser.me/api")
+        
         .then(res => res.json())
         .then(data =>{
+            
                 console.log(data);
-
+                
+                  
                 let persona = data.results[0].name;
                 console.log(persona);
                 let url_foto = data.results[0].picture.large;
@@ -21,7 +25,9 @@ function mostrarDatosAPI()
                 contenido.innerHTML += `${imagen}<br>`;
                 contenido.innerHTML += `<br>Tlf: ${data.results[0].cell}`
 
+                
 
+                
 
 
                

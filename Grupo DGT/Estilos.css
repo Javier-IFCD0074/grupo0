@@ -6,20 +6,20 @@ body{
 }
 
 h1{
-    color: rgb(46, 151, 151);
+    color: rgb(22, 68, 68);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 28px;
 }
 
 h2{
-    color: rgb(46, 151, 151);
+    color: rgb(22, 68, 68);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 20px; /* Letra de tamaño fijo */
     font-style: italic;
 }
 
 ul{
-    color: rgb(123, 64, 219);
+    color: rgb(48, 26, 85);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-style: italic;
@@ -32,7 +32,7 @@ ul{
   }
 
 table {
-    color: rgb(123, 64, 219);
+    color: rgb(48, 26, 85);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     border-collapse: collapse;

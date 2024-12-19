@@ -1,0 +1,21 @@
+body{
+
+   background: linear-gradient(to left top, aquamarine, violet );
+   background-repeat: no-repeat;
+   background-size: contain;
+
+}
+button {
+    height: 50px;
+    width: 200px;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-style: dashed;
+    display: block;
+    display: inline-block;
+    cursor: pointer;
+    
+}

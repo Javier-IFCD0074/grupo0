@@ -3,7 +3,7 @@ document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, tr
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 
 let contenido = document.querySelector("#contenido");
-
+    
 function mostrarDatosAPI()
 {
 //contenido.innerHTML = 'Hola Mundo';

@@ -15,7 +15,7 @@ fetch("https://cima.aemps.es/cima/rest/medicamento?nregistro=51347")
             let medicamento = data.results [0];
             console.log(medicamento);
             contenido.innerHTML = `${medicamento.nombre} `;
-            contenido.innerHTML += ` ${medicamento.nºregistro} `;
+            contenido.innerHTML += ` ${medicamento.nregistro} `;
             contenido.innerHTML += ` ${labtitular.labtitular} <br>`;
 
             let url_foto = data.results [0].<!--picture.large/--!>;

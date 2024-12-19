@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Costa
 
 LOMO SALTADO
@@ -342,3 +343,6 @@ Instrucciones
 Luego, agrega una cucharada de ajo molido, dos papas cortadas en cuadritos, una taza habas, media taza de zanahoria, una taza de yuca pelada y cortada en cuadritos, media taza de apio picado finamente, media taza de poro picado finamente, media taza de choclo desgranado y un litro de agua hervida. Mezcla todo muy bien y deja que vayan cocinando todos los ingredientes.
 Agrega los cuatrocientos cincuenta gramos de pescado en trozos, agrega los sobres de caldo de pescado y mariscos. Rectifica la sazón con sal al gusto y deja cocinar por unos minutos más y agregar el perejil picadito.
 Sirve bien caliente acompañado con crutones de pan.
+=======
+Hola Mundo!
+>>>>>>> e581a46bbaacea147fa2ec1a183bac44e2c668de

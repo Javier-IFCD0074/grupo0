@@ -1,31 +1,31 @@
 //document.getElementById("mostrar").addEventListener("click", mostrarCosas, true);
-document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
-document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
+document.getElementById("numreg").addEventListener("click", mostrarDatosAPI, true);
+console.log(numreg);
+document.getElementById("limpiar").addEventListener("click", LimpiarDatosForm, true);
 
 let contenido = document.querySelector("#contenido");
 
 function mostrarDatosAPI()
 {
-//contenido.innerHTML = 'Hola Mundo';
-console.log('Ha pulsado medicamento');
+console.log('Ha pulsado medicamento. Vamos a buscarlo ...');
 fetch("https://cima.aemps.es/cima/rest/medicamento?nregistro=51347")
     .then(res => res.json())
-    .then(data =>{
+    .then(data => { 
             console.log(data);
-            let medicamento = data.results [0];
+            let medicamento = data;
             console.log(medicamento);
             contenido.innerHTML = `${medicamento.nombre} `;
             contenido.innerHTML += ` ${medicamento.nregistro} `;
-            contenido.innerHTML += ` ${labtitular.labtitular} <br>`;
+            contenido.innerHTML += ` ${medicamento.labtitular} <br>`;
 
-            let url_foto = data.results [0].<!--picture.large/--!>;
+            let url_foto = data.fotos[0].url;
             console.log(url_foto);
             let imagen= `<img src="${url_foto}" alt="Mi ejemplo">`;
             contenido.innerHTML += `${imagen}<br>`;
-})
-   
 }
-
+    )
+}
+   
 function mostrarCosas()
 {
     contenido.innerHTML = 'Hola '
@@ -38,8 +38,10 @@ function mostrarCosas()
     }
 }
 
-function limpiarDatosAPI()
+function LimpiarDatosForm()
 {
-    console.log('Ha pulsado borrar usuario');
-    contenido.innerHTML = '';
+    console.log('Ha pulsado el boton de limpiar datos del form');
+    Codigo.innerHTML = '';
+    
+    //contenido.innerHTML = '';
 }

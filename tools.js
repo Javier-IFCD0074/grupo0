@@ -8,7 +8,7 @@ function mostrarDatosAPI()
 {
 //contenido.innerHTML = 'Hola Mundo';
 console.log('Ha pulsado medicamento');
-fetch("https://cima.aemps.es/cima/rest/medicamento?nregistro=51347")
+fetch("https://cima.aemps.es/cima/rest/medicamento?nregistro= 74475")
     .then(res => res.json())
     .then(data => {
             console.log(data);

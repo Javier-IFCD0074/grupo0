@@ -47,7 +47,8 @@ function crear_tabla()
     {
         contenido.innerHTML += ` Fila ${i} <br>`;
         for(j=0; j<3; j++)
-            contenido.innerHTML += ` Celda ${j} <br>`;
+            contenido.innerHTML += ` -Celda ${j}`;
+        contenido.innerHTML += '<br>';
     }
 }
 

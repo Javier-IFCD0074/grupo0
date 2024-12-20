@@ -1,6 +1,6 @@
-//document.getElementById("mostrar").addEventListener("click", mostrarCosas, true);
+document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
 //document.getElementById("mostrar").addEventListener("click", Crear_tabla_v0, true);
-document.getElementById("mostrar").addEventListener("click", Crear_tabla_v1, true);
+//document.getElementById("mostrar").addEventListener("click", Crear_tabla_v1, true);
 //document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 
@@ -10,7 +10,7 @@ function mostrarDatosAPI()
 {
 //contenido.innerHTML = 'Hola Mundo';
 console.log('Ha pulsado mostrar usuario');
-fetch("https://randomuser.me/api/")
+fetch("https://randomuser.me/api?results/5")
     .then(res => res.json())
     .then(data =>{
             console.log(data);
@@ -19,6 +19,10 @@ fetch("https://randomuser.me/api/")
             contenido.innerHTML = `${persona.title} `;
             contenido.innerHTML += ` ${persona.first} `;
             contenido.innerHTML += ` ${persona.last} <br>`;
+            
+            for (i=0; i<5; i++)
+            contenido.innerHTML+= ` ${data.results[1].name.first} <br>`;
+
 
             let url_foto = data.results [0].picture.large;
             console.log(url_foto);

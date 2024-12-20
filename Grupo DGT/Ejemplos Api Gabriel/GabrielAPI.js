@@ -1,6 +1,6 @@
-//document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true); PARA MOSTRAR DATOS DEL USUARIO
+document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);// PARA MOSTRAR DATOS DEL USUARIO
 //document.getElementById("mostrar").addEventListener("click", mostrarTabla_V0, true);
-document.getElementById("mostrar").addEventListener("click", mostrarTabla_V1, true);
+//document.getElementById("mostrar").addEventListener("click", mostrarTabla_V1, true);
 
 let contenido = document.querySelector("#contenido");
 //let contador = 0;   SIRVE PARA HACER MULTIPLES USUARIOS CLICK A CLICK
@@ -14,24 +14,26 @@ function mostrarDatosAPI()
         return;
     }*/
 
-    fetch("https://randomuser.me/api")
+    fetch("https://randomuser.me/api?results=5")
         
         .then(res => res.json())
         .then(data =>{
             
                 console.log(data);
                 
-                  
+              
                 let persona = data.results[0].name;
                 console.log(persona);
                 let url_foto = data.results[0].picture.large;
                 console.log(url_foto);
-                contenido.innerHTML += `${persona.title} ${persona.first} ${persona.last}`;
+                contenido.innerHTML = `${persona.title} ${persona.first} ${persona.last}`;
                 contenido.innerHTML += `<br>(Edad: ${data.results[0].dob.age})<br>`;
                 let imagen= `<img src="${url_foto}" alt="Foto">`;
                 contenido.innerHTML += `${imagen}<br>`;
                 contenido.innerHTML += `<br>Tlf: ${data.results[0].cell}<br><br>`
-
+                for(i=1; i<5; i++)
+                    contenido.innerHTML += `${data.results[i].name.first}<br>`  
+                    
                 
                 //SIRVE PARA HACER MULTIPLES USUARIOS CLICK A CLICK
                 /*contador++;
@@ -50,7 +52,7 @@ function mostrarDatosAPI()
 
 }
 //SIRVE PARA HACER UNA TABLA CON MULTIPLES FILAS
-function mostrarTabla_V1()
+/*function mostrarTabla_V1()
 {   
     contenido.innerHTML = `<table border="1">`
     for(i=0; i<5; i ++)
@@ -63,7 +65,7 @@ function mostrarTabla_V1()
             contenido.innerHTML += `</tr>`; //TERMINA LA FILA
         contenido.innerHTML += `</table> `;
     }
-}
+}*/
 //SIRVE PARA HACER UNA TABLA CON MULTIPLES FILAS Y CELDAS, VERSION 0
 /*function mostrarTabla_V0()
 {   

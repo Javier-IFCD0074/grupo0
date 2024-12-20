@@ -61,8 +61,8 @@ function ocultarDatosAPI()
     
     
 }
-//document.getElementById("texto").addEventListener("click", verMedicamentos, true);
-/*function verMedicamentos() { 
+/*document.getElementById("texto").addEventListener("click", verMedicamentos, true);
+function verMedicamentos() { 
 			
     console.log("Ha pulsado en ver medicamentos")
 
@@ -92,9 +92,9 @@ function ocultarDatosAPI()
         console.log(foto);
         let imagen= `<img src="${foto}" alt="Foto">`;
         contenido.innerHTML += `${imagen}<br>`;*/
-   // })
+   /* })
 
-//} 
+} */
 /*document.getElementById("medicina").addEventListener("select", verMedicina, true);
 function verMedicina() { 
 			

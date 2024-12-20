@@ -164,9 +164,9 @@ function verMedicamentos() {
             contenido.innerHTML += `<br>(Laboratorio: ${Laboratorio})<br>`;
 
             // Si quieres mostrar la foto, descomenta las siguientes líneas:
-            /*let foto = data.fotos[0].url;
+            let foto = data.fotos[0].url;
             let imagen = `<img src="${foto}" alt="Foto">`;
-            contenido.innerHTML += `${imagen}<br>`;*/
+            contenido.innerHTML += `${imagen}<br>`;
         } else {
             // En caso de que no se encuentren los datos del medicamento
             alert("No se encontró información para ese número de medicamento.");

@@ -1,5 +1,6 @@
 //document.getElementById("mostrar").addEventListener("click", mostrarCosas, true);
-document.getElementById("mostrar").addEventListener("click", Creartabla, true);
+//document.getElementById("mostrar").addEventListener("click", Crear_tabla_v0, true);
+document.getElementById("mostrar").addEventListener("click", Crear_tabla_v1, true);
 //document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 
@@ -38,13 +39,29 @@ function mostrarCosas()
     }
 }
 
-function Creartabla()
+function Crear_tabla_v0()
 {
-    contenido.innerHTML = 'Tabla '
-    for(i=0; i<5; i ++)
+    contenido.innerHTML = 'Tabla <br>'
+    for(i=0; i<3; i ++)
     {   
-        contenido.innerHTML += `Fila ${i} <br>`;
+        contenido.innerHTML +=    `Fila ${i} <br>`;
+        for(j=0; j<3; j ++)
+            contenido.innerHTML += ` - Celda ${j} `;
+        contenido.innerHTML +=  '<br>'; 
     }
+    contenido.innerHTML +=  'fin';
+}
+function Crear_tabla_v1()
+{
+    contenido.innerHTML = '<Table border=1>'
+    for(i=0; i<3; i ++)
+    {   
+        contenido.innerHTML +=    `<tr>`; //EMPIEZA LA FILA
+        for(j=0; j<3; j ++)
+            contenido.innerHTML += ` <td> Celda ${i} ${j} </td>`;
+        contenido.innerHTML +=  '</tr>'; //FINAL DE LA FILA
+    }
+    contenido.innerHTML +=  'fin';
 }
 
 function limpiarDatosAPI()

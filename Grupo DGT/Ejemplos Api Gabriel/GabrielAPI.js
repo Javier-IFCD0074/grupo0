@@ -1,11 +1,18 @@
-document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+//document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true); PARA MOSTRAR DATOS DEL USUARIO
+//document.getElementById("mostrar").addEventListener("click", mostrarTabla_V0, true);
+document.getElementById("mostrar").addEventListener("click", mostrarTabla_V1, true);
 
 let contenido = document.querySelector("#contenido");
+//let contador = 0;   SIRVE PARA HACER MULTIPLES USUARIOS CLICK A CLICK
 function mostrarDatosAPI()
 {
      
     console.log('Ha pulsado mostrar usuario');
-    for(i=0; i<4; i++)
+    //SIRVE PARA HACER MULTIPLES USUARIOS CLICK A CLICK
+    /*if (contador >=4){ 
+        console.log("Ya se han mostrado 4 usuarios, no se admiten mas solicitudes)")
+        return;
+    }*/
 
     fetch("https://randomuser.me/api")
         
@@ -19,37 +26,75 @@ function mostrarDatosAPI()
                 console.log(persona);
                 let url_foto = data.results[0].picture.large;
                 console.log(url_foto);
-                contenido.innerHTML = `${persona.title} ${persona.first} ${persona.last}`;
+                contenido.innerHTML += `${persona.title} ${persona.first} ${persona.last}`;
                 contenido.innerHTML += `<br>(Edad: ${data.results[0].dob.age})<br>`;
                 let imagen= `<img src="${url_foto}" alt="Foto">`;
                 contenido.innerHTML += `${imagen}<br>`;
-                contenido.innerHTML += `<br>Tlf: ${data.results[0].cell}`
+                contenido.innerHTML += `<br>Tlf: ${data.results[0].cell}<br><br>`
 
                 
-
-                
-
+                //SIRVE PARA HACER MULTIPLES USUARIOS CLICK A CLICK
+                /*contador++;
+                if (contador >= 4) {
+                    console.log("Ya se han mostrado 4 usuarios.");
+                }*/
+            })
+            /*.catch(error => {
+                console.error("Error al obtener datos de usuario:", error);*/
 
                
 
-        })
+        
        
 
 
 }
+//SIRVE PARA HACER UNA TABLA CON MULTIPLES FILAS
+function mostrarTabla_V1()
+{   
+    contenido.innerHTML = `<table border="1">`
+    for(i=0; i<5; i ++)
+    {
+            contenido.innerHTML += `<tr><br>`; //EMPIEZA LA FILA
+            for(j=0; j<3; j++)
+            {
+                contenido.innerHTML += `<td>-Celda ${i} ${j} </td>`;
+            }
+            contenido.innerHTML += `</tr>`; //TERMINA LA FILA
+        contenido.innerHTML += `</table> `;
+    }
+}
+//SIRVE PARA HACER UNA TABLA CON MULTIPLES FILAS Y CELDAS, VERSION 0
+/*function mostrarTabla_V0()
+{   
+    contenido.innerHTML = 'Tabla: <br>'
+    for(i=0; i<5; i ++)
+    {
+            contenido.innerHTML += `Fila ${i} <br>`;
+            for(j=0; j<3; j++)
+            {
+                contenido.innerHTML += `-Celda ${j} `;
+            }
+            contenido.innerHTML += `<br> `;
+    }
+}*/
+
+//SIRVE PARA BORRAR UNICAMENTE EL USUARIO
 document.getElementById("Limpiar").addEventListener("click", ocultarDatosAPI, true);
 function ocultarDatosAPI()
 {
     console.log("Ha pulsado borrar usuario");
     contenido.innerHTML ='';
+    contador = 0;  
     
     
 }
+//SIRVE PARA BORRAR TODO, AUNQUE EN ESTE CASO SOLO BORRA LA IMAGEN EN ESTE MOMENTO
 document.getElementById("LimpiarTodo").addEventListener("click", LimpiarTodoAPI, true);
 function LimpiarTodoAPI()
 {
 
-    //contenido.innerHTML ='';
+    //contenido.innerHTML =''; 
     imagenes.innerHTML = '';
     //videos.innerHTML = '';
 }
@@ -69,6 +114,7 @@ function VervideoAPI()
 
 
 }
+//SIRVE PARA BORRAR UNICAMENTE EL VIDEO
 document.getElementById("LimpiarVideo").addEventListener("click", QuitarVideoAPI, true);
 function QuitarVideoAPI()
 {

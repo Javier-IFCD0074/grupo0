@@ -7,22 +7,22 @@ let contenido = document.querySelector("#contenido");
 function mostrarDatosAPI()
 {
 //contenido.innerHTML = 'Hola Mundo';
-console.log('Ha pulsado mostrar usuario');
-fetch("https://cima.aemps.es/cima/rest/medicamento?nregistro=51347")
+console.log('Ha pulsado medicamento');
+fetch("https://cima.aemps.es/cima/rest/medicamento?nregistro= 74475")
     .then(res => res.json())
-    .then(data =>{
+    .then(data => {
             console.log(data);
-            let persona = data.results [0].name;
-            console.log(persona);
-            contenido.innerHTML = `${persona.title} `;
-            contenido.innerHTML += ` ${persona.first} `;
-            contenido.innerHTML += ` ${persona.last} <br>`;
-
-            let url_foto = data.results [0].picture.large;
+            let medicamento = data;
+            console.log(data);
+            contenido.innerHTML = `${medicamento.nombre} `;
+            contenido.innerHTML += ` ${medicamento.nregistro} `;
+            contenido.innerHTML += ` ${medicamento.labtitular} <br>`;
+            
+        let url_foto = data.fotos[0].url;
             console.log(url_foto);
             let imagen= `<img src="${url_foto}" alt="Mi ejemplo">`;
             contenido.innerHTML += `${imagen}<br>`;
-    })
+})
     
 }
 

@@ -37,6 +37,7 @@ table {
 td {
 
     /*border: 5px, black;*/
-    border: solid 2px rgba(174, 235, 174, 0.2);
+    border: solid 8px rgba(174, 235, 174, 0.2);
+    /*border: solid 8px rgb(174, 235, 174);*/
 
 }

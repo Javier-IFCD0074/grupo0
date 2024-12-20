@@ -1,0 +1,45 @@
+h1{
+    color:blue;
+}
+body{
+
+
+background-repeat: no-repeat;
+background-image: url(./img/flat-lay-medical-desk-arrangement-with-copy-space.jpg);
+background-size: cover;
+}
+
+
+button {
+    background-color: #007BFF; /* Azul llamativo */
+    color: white; /* Texto blanco */
+    font-size: 16px; /* Tamaño de texto más grande */
+    font-weight: bold; /* Texto en negrita */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    transition: background-color 0.3s, transform 0.2s; /* Efecto de transición */
+}
+
+
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar */
+    transform: scale(1.05); /* Ligeramente más grande */
+}
+
+
+.hand-pointing {
+    max-width: 40px; /* Tamaño de la imagen */
+    animation: bounce 1s infinite; /* Efecto de rebote */
+}
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

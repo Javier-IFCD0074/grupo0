@@ -1,5 +1,6 @@
 //document.getElementById("mostrar").addEventListener("click", mostrarCosas, true);
-document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+//document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+document.getElementById("mostrar").addEventListener("click", crear_tabla, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 
 let contenido = document.querySelector("#contenido");
@@ -29,13 +30,27 @@ fetch("https://randomuser.me/api/")
 function mostrarCosas()
 {
     contenido.innerHTML = 'Hola '
-    for(i=0; i<7; i ++)
+    for(i=0; i<5; i ++)
     {   
         if(i==2)
             contenido.innerHTML += ' Perros <br>';
         else
             contenido.innerHTML += ` Colegas ${i} <br>`;
     }
+}
+function crear_tabla()
+{
+    contenido.innerHTML = 'tabla:<br>' 
+    for(i=0; i<=5 ; i ++)    
+    {
+        
+            contenido.innerHTML += ` fila ${i} <br>`;
+
+            for(j=0; j<3 ; j++)            
+            contenido.innerHTML += ` -celda ${j} `;
+        contenido.innerHTML += `<br>`;
+        }
+
 }
 
 function limpiarDatosAPI()

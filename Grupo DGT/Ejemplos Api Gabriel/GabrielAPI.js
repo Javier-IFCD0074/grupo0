@@ -1,5 +1,6 @@
 //document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true); PARA MOSTRAR DATOS DEL USUARIO
-document.getElementById("mostrar").addEventListener("click", mostrarTabla, true);
+//document.getElementById("mostrar").addEventListener("click", mostrarTabla_V0, true);
+document.getElementById("mostrar").addEventListener("click", mostrarTabla_V1, true);
 
 let contenido = document.querySelector("#contenido");
 //let contador = 0;   SIRVE PARA HACER MULTIPLES USUARIOS CLICK A CLICK
@@ -49,7 +50,22 @@ function mostrarDatosAPI()
 
 }
 //SIRVE PARA HACER UNA TABLA CON MULTIPLES FILAS
-function mostrarTabla()
+function mostrarTabla_V1()
+{   
+    contenido.innerHTML = `<table border="1">`
+    for(i=0; i<5; i ++)
+    {
+            contenido.innerHTML += `<tr><br>`; //EMPIEZA LA FILA
+            for(j=0; j<3; j++)
+            {
+                contenido.innerHTML += `<td>-Celda ${i} ${j} </td>`;
+            }
+            contenido.innerHTML += `</tr>`; //TERMINA LA FILA
+        contenido.innerHTML += `</table> `;
+    }
+}
+//SIRVE PARA HACER UNA TABLA CON MULTIPLES FILAS Y CELDAS, VERSION 0
+/*function mostrarTabla_V0()
 {   
     contenido.innerHTML = 'Tabla: <br>'
     for(i=0; i<5; i ++)
@@ -61,7 +77,7 @@ function mostrarTabla()
             }
             contenido.innerHTML += `<br> `;
     }
-}
+}*/
 
 //SIRVE PARA BORRAR UNICAMENTE EL USUARIO
 document.getElementById("Limpiar").addEventListener("click", ocultarDatosAPI, true);

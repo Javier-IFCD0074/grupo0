@@ -1,42 +1,42 @@
-document.getElementById("btnBuscarMedicamento").addEventListener("click", mostrarDatosAPI, true);
-document.getElementById("borrar").addEventListener("click", borrarDatosAPI, true)
+document.getElementById("numreg").addEventListener("click", mostrarDatosAPI, true);
+console.log(numreg);
+document.getElementById("borrar").addEventListener("click", borrarDatosAPI, true);
 
-console.log("Ha pulsado mostrar usuario"); {
-fetch('https://cima.aemps.es/cima/rest/medicamento?nregistro=51347')
-  .then(response => response.json())
-  .then(data => {
+let contenido = document.querySelector("#contenido")
+
+function mostrarDatosAPI ()
+{
+      console.log("Ha pulsado Buscar medicamento"); 
+        fetch('https://cima.aemps.es/cima/rest/medicamento?nregistro=51347')
+        .then(res => res.json())
+        .then(data => {
     console.log(data);
-    buscarMedicamento(data);
-  })
-  .catch(error => console.error('Error fetching data:', error));
-
-}
-  function mostrarDatosAPI(medicamento) {
-    const contenido = document.getElementById('contenido');
+    let medicamento = data;
+    console.log(medicamento);
+    contenido.innerHTML = `${medicamento.nombre}`;
+    contenido.innerHTML += `${medicamento.nregistro}`;
+    contenido.innerHTML += `${medicamento.labtitular} <br>`
     
-    contenido.innerHTML = `
-        <h2>${medicamento.nombre}</h2>
-        <p>Registro: ${medicamento.nregistro}</p>
-        
-        ${medicamento.principiosActivos 
-            ? `<h3>Principales componentes:</h3>
-               <ul>
-                   ${medicamento.principiosActivos.map(p => `<li>${p.nombre} (${p.cantidad} ${p.unidad})</li>`).join('')}
-               </ul>`
-            : '<p>No se han encontrado principios activos.</p>'
-        }
-        
-        <h3>Formulación:</h3>
-        <p>${medicamento.formaFarmaceuticaSimplificada?.nombre}</p>
-        
-        <h3>Dosis recomendada:</h3>
-        <p>${medicamento.dosis}</p>
-    `;
-}
-  
- 
-
+    let url_foto = data.fotos[0].url;
+    console.log(url_foto);
+    let imagen= `<img src= "${url_foto}" alt= "FOTO MEDICAMENTO">`;
+    contenido.innerHTML += `${imagen}<br>`;
     
+}
+        )
+  }
+
+  function mostrarCosas()
+{
+    contenido.innerHTML = 'Hola '
+    for(i=0; i<7; i ++)
+    {  
+        if(i==2)
+            contenido.innerHTML += ' Perros <br>';
+        else
+            contenido.innerHTML += ` Colegas ${i} <br>`;
+    }
+}
 
 function mostrarMensajeError() {
     document.getElementById('contenido').innerHTML = 'No se ha podido encontrar.';

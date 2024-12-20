@@ -1,0 +1,30 @@
+div {color:white;
+    font-size: 28px;
+background: linear-gradient(black,blue);}
+button {
+    background-color: #31f80a; /* Azul llamativo */
+    color: rgb(10, 0, 0); /* Texto blanco */
+    font-size: 16px; /* Tamaño de texto más grande */
+    font-weight: bold; /* Texto en negrita */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    transition: background-color 0.3s, transform 0.2s; /* Efecto de transición */
+
+    &:nth-of-type(2) {
+        background-color: #ff0000; /* Rojo para el segundo botón */
+        color: aqua;
+    }
+
+    &:hover {
+        background-color: #333333; /* Gris oscuro en hover */
+        transform: translateY(-2px); /* Leve efecto de subida */
+    }
+    &:nth-of-type(2):hover {
+        background-color: #cccccc; /* Blanco claro para el segundo botón en hover */
+        color: rgb(255, 255, 255); /* Texto negro para contraste */
+        border: 2px solid #666666; /* Bordes rojos en hover */
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Sombra roja en hover */
+    }
+}

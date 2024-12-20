@@ -1,45 +1,49 @@
-document
-  .getElementById("numreg")
-  .addEventListener("click", mostrarDatosAPI, true);
-console.log(numreg);
-document
-  .getElementById("borrar")
-  .addEventListener("click", borrarDatosAPI, true);
+// Evento al hacer clic en el botón de "Buscar Información"
+document.getElementById('buscarBtn').addEventListener('click', obtenerInformacionMedicamento);
 
-let contenido = document.querySelector("#contenido");
+// Evento al hacer clic en el botón de "Borrar Información"
+document.getElementById('borrarBtn').addEventListener('click', borrarInformacionMedicamento);
 
-function mostrarDatosAPI() {
-  console.log("Ha pulsado Buscar medicamento");
-  fetch("https://cima.aemps.es/cima/rest/medicamento?nregistro=51347")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      let medicamento = data;
-      console.log(medicamento);
-      contenido.innerHTML = `${medicamento.nombre}`;
-      contenido.innerHTML += `${medicamento.nregistro}`;
-      contenido.innerHTML += `${medicamento.labtitular} <br>`;
+// Función para obtener la información del medicamento
+function obtenerInformacionMedicamento() {
+const nregistro = '51347';
 
-      let url_foto = data.fotos[0].url;
-      console.log(url_foto);
-      let imagen = `<img src= "${url_foto}" alt= "FOTO MEDICAMENTO">`;
-      contenido.innerHTML += `${imagen}<br>`;
-    })
+  // Construir la URL de la API
+  const url = `https://cima.aemps.es/cima/rest/medicamento?nregistro=${nregistro}`;
+
+fetch(url)
+    .then(response => response.json())
+    .then(data => mostrarInformacionMedicamento(data)) 
+    .catch(error => console.error('Error:', error));
+
+    }   
+// Función para mostrar la información del medicamento en el DOM
+function mostrarInformacionMedicamento(data) {
+  const infoDiv = document.getElementById('medicamentoInfo');
+  
+  // Crear elementos HTML dinámicamente con los datos
+  infoDiv.innerHTML = `
+      <h2>${data.nombre}</h2>
+      <p><strong>Código ATC:</strong> ${data.atcs[0].nombre}</p>
+      <p><strong>Laboratorio Titular:</strong> ${data.labtitular}</p>
+      <p><strong>Laboratorio Comercializador:</strong> ${data.labcomercializador}</p>
+      <p><strong>Estado:</strong> ${data.estado.aut}</p>
+      <img src="${data.fotos && data.fotos.length > 0 ? data.fotos[0].url : ''}" alt="Imagen del medicamento" style="max-width: 200px; display: ${data.fotos && data.fotos.length > 0 ? 'block' : 'none'};">
+  `;
 }
 
-function mostrarCosas() {
-  contenido.innerHTML = "Hola ";
-  for (i = 0; i < 7; i ++) 
-    {
-    if (i == 2) 
-        contenido.innerHTML += " Perros <br>";
-    else 
-        contenido.innerHTML += ` Colegas ${i} <br>`;
-  }
+// Función para borrar la información del medicamento
+function borrarInformacionMedicamento() {
+  const infoDiv = document.getElementById('medicamentoInfo');
+  infoDiv.innerHTML = ''; // Limpiar el contenido del div
+}
+function mostrarMensajeError() {
+  const infoDiv = document.getElementById('medicamentoInfo');
+  infoDiv.innerHTML = `
+      <div class="error-message">
+          <p>No ha sido posible encontrar información sobre este medicamento.</p>
+          <p>Por favor, verifique el número de registro y vuelva a intentar.</p>
+      </div>
+  `;
 }
 
-function LimpiarDatosForm() 
-{
-  console.log("Ha pulsado borrar usuario");
-  Codigo.innerHTML = "";
-}

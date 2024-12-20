@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <input type="text" name="numero de registro" value="51347" id="nreg">
+    <!--button id="mostrar">Buscar</button-->
+    <input type="button" value="Ver" onclick="mostrarDatosAPI(this.form.nreg.value);">
+    <button id="limpiar">Limpiar</button>
+</form>
+
+    <div id="contenido"></div>
+
+    <script>
+        //document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+        document.getElementById("limpiar").addEventListener("click", borrarDatosAPI, true);
+        let caja = document.querySelector("#contenido");
+
+        function mostrarDatosAPI(nreg) 
+        {   
+            console.log('Ha pulsado ver medicamento num. '+nreg);
+
+            //fetch("https://cima.aemps.es/cima/rest/medicamento?nregistro=51347")
+            fetch(`https://cima.aemps.es/cima/rest/medicamento?nregistro=${nreg}`)
+                .then(res => res.json())
+                .then(data =>{
+                    //console.log(data);
+                    let medicamento = data;
+                    let url_prospecto=medicamento.docs[1].url;
+                    let enlace= `<a href="${url_prospecto}">Ver prospecto<a>`;
+                    //console.log(enlace);
+                    //console.log(medicamento);
+                    caja.innerHTML = `${medicamento.nombre}<br>`;
+                    caja.innerHTML += ` ${medicamento.pactivos}<br>`;
+                    caja.innerHTML += ` ${medicamento.labtitular}<br>`;
+                    caja.innerHTML += enlace;
+                    
+                /*let url_foto = data.fotos[0].url;
+                console.log(url_foto);
+                let imagen= `<br><img src="${url_foto}" alt="ejemplo de foto">`;
+                
+                caja.innerHTML += `${imagen}<br>`;*/
+                })
+
+            //caja.innerHTML = 'Hola mundo';
+        }
+
+        function mostrarCosas() 
+        {
+            caja.innerHTML = 'Hola ';
+            for(i=0; i<4; i++)
+            {
+                if (i==2)
+                    caja.innerHTML += ' perros <br>';
+                else
+                    caja.innerHTML += ' amigos <br>';
+            }
+        }
+
+        function borrarDatosAPI() 
+        {
+            console.log('Ha pulsado borrar usuario');
+            caja.innerHTML = '';
+        }
+    </script>
+
+<!--<script src="Tamara.js"></script>-->
+
+</body>
+</html>

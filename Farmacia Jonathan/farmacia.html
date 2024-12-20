@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="./img/farmacia-online.png">
+    <title>Buscar Medicamentos</title>
+    <style>
+        /* Hacer el campo de entrada completamente transparente */
+        #nregistro {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid gray;
+            padding: 5px;
+            font-size: 16px;
+            color: black;
+        }
+
+
+        /* Efecto al enfocar el campo */
+        #nregistro:focus {
+            border-bottom: 2px solid blue;
+            outline: none;
+        }
+
+
+        /* Placeholder estilizado */
+        #nregistro::placeholder {
+            color: gray;
+            opacity: 0.7;
+        }
+
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 100px;
+            color: #333;
+        }
+
+
+        label {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+
+
+        #buscadorMedicamento {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+
+        #medicamentoInfo {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buscador de Medicamentos</h1>
+    <!-- Formulario para buscar medicamentos -->
+    <form id="buscadorMedicamento">
+        <label for="nregistro">Número de Registro:</label>
+        <input type="text" id="nregistro" placeholder="Introduce el número de registro" required>
+        <button type="submit">Buscar</button>
+        <button type="button" id="prospectoBtn" style="background-color: #007BFF;">Ver Prospecto</button>
+    </form>
+    <div id="medicamentoInfo"></div>
+
+
+    <script>
+        // Función para obtener la información del medicamento
+        function obtenerInformacionMedicamento(nregistro) {
+            if (nregistro.length === 0) {
+                alert("Por favor, introduce un número de registro válido.");
+                return;
+            }
+
+
+            // Construir la URL de la API
+            const url = `https://cima.aemps.es/cima/rest/medicamento?nregistro=${nregistro}`;
+       
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No se encontró información para el número de registro proporcionado.');
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    try {
+                        const data = JSON.parse(text);
+                        mostrarInformacionMedicamento(data);
+                    } catch (error) {
+                        throw new Error('Número de registro no válido.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('medicamentoInfo').innerHTML = `<p style="color: red;">${error.message}</p>`;
+                });
+        }
+
+
+        // Función para mostrar la información del medicamento en el DOM
+        function mostrarInformacionMedicamento(data) {
+            const infoDiv = document.getElementById('medicamentoInfo');
+           
+            if (!data || !data.nombre) {
+                infoDiv.innerHTML = `<p style="color: red;">No se encontraron datos para este medicamento.</p>`;
+                return;
+            }
+           
+            infoDiv.innerHTML = `
+                <h2>${data.nombre}</h2>
+                <p><strong>Código ATC:</strong> ${data.atcs && data.atcs[0] ? data.atcs[0].nombre : 'No disponible'}</p>
+                <table>
+                    <tr>
+                        <th>Principio Activo</th>
+                        <th>Cantidad</th>
+                        <th>Unidad</th>
+                    </tr>
+                    ${data.pactivos ? data.pactivos.split(', ').map(p => `
+                        <tr>
+                            <td>${p.trim()}</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    `).join('') : '<tr><td colspan="3">No disponible</td></tr>'}
+                </table>
+                <p><strong>Laboratorio Titular:</strong> ${data.labtitular || 'No disponible'}</p>
+                <p><strong>Laboratorio Comercializador:</strong> ${data.labcomercializador || 'No disponible'}</p>
+                <p><strong>Estado:</strong> ${data.estado ? data.estado.aut : 'No disponible'}</p>
+                <img src="${data.fotos && data.fotos.length > 0 ? data.fotos[0].url : ''}" alt="Imagen del medicamento" style="max-width: 300px; display: ${data.fotos && data.fotos.length > 0 ? 'block' : 'none'};">
+            `;
+        }
+// Función para abrir el prospecto
+function verProspecto() {
+    const nregistro = document.getElementById('nregistro').value.trim();
+    if (nregistro.length === 0) {
+        alert("Por favor, introduce un número de registro válido.");
+        return;
+    }
+
+
+    // Crear la URL dinámica con el número de registro
+    const urlProspecto = `https://cima.aemps.es/cima/dochtml/p/${nregistro}/P_${nregistro}.html`;
+
+
+    // Intentar abrir el prospecto en una nueva pestaña
+    const ventana = window.open(urlProspecto, '_blank');
+   
+    // Verificar si la ventana se abrió correctamente
+    if (!ventana) {
+        alert("No se puede abrir la nueva pestaña. Por favor, revisa el número de registro o las configuraciones del navegador.");
+    }
+}
+
+
+
+
+        // Manejar el evento de envío del formulario
+        document.getElementById('buscadorMedicamento').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nregistro = document.getElementById('nregistro').value.trim();
+            if (nregistro) {
+                obtenerInformacionMedicamento(nregistro);
+            } else {
+                alert('Por favor, introduce un número de registro válido.');
+            }
+        });
+
+
+        // Manejar el evento de hacer clic en el botón "Ver Prospecto"
+        document.getElementById('prospectoBtn').addEventListener('click', function(event) {
+            event.preventDefault();
+            verProspecto();
+        });
+    </script>
+</body>
+</html>

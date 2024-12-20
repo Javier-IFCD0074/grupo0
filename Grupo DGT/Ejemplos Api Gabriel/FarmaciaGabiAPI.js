@@ -134,10 +134,10 @@ document.getElementById("botonMostrar").addEventListener("click", verMedicamento
 
 function verMedicamentos() {
     // Obtenemos el número del medicamento desde el cuadro de texto
-    let nombreMedicamento = document.getElementById("medicamentoNumero").value;
+    let numeroMedicamento = document.getElementById("medicamentoNumero").value;
     
     // Verificamos si el campo no está vacío
-    if (nombreMedicamento === "") {
+    if (numeroMedicamento === "") {
         alert("Por favor, ingrese el número del medicamento.");
         return;
     }
@@ -145,7 +145,7 @@ function verMedicamentos() {
     console.log("Ha pulsado en mostrar medicamento");
 
     // Realizamos la solicitud con el número de medicamento ingresado
-    fetch(`https://cima.aemps.es/cima/rest/medicamento?nregistro=${nombreMedicamento}`)
+    fetch(`https://cima.aemps.es/cima/rest/medicamento?nregistro=${numeroMedicamento}`)
     .then(res => res.json())
     .then(data => {
         console.log(data);

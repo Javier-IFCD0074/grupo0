@@ -1,13 +1,6 @@
-
-
-body {
-    /*background-color:59A9FF;*/
-    background:linear-gradient(to top right,red,#313173,green);
-    background-repeat: no-repeat;
-    
-font-family:helvetica;
-    color:rgb(2, 2, 2);
-}
+div {color:white;
+    font-size: 28px;
+background: linear-gradient(black,blue);}
 button {
     background-color: #31f80a; /* Azul llamativo */
     color: rgb(10, 0, 0); /* Texto blanco */
@@ -35,6 +28,3 @@ button {
         box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Sombra roja en hover */
     }
 }
-
-
-

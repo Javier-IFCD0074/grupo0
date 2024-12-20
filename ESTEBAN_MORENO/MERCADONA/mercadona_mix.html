@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar JSON de Mercadona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .data {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>Datos de Categorías de Mercadona</h1>
+    <div id="data-container" class="data">Cargando datos...</div>
+
+    <script>
+        // URL del API de Mercadona
+        const apiUrl = "https://tienda.mercadona.es/api/categories/";
+
+        // Recuperar y mostrar los datos
+        const fetchData = async () => {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                displayData(data);
+            } catch (error) {
+                document.getElementById('data-container').innerText = `Error al cargar los datos: ${error.message}`;
+            }
+        };
+
+        // Formatear y mostrar los datos en la página
+        const displayData = (data) => {
+            const container = document.getElementById('data-container');
+            container.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        };
+
+        // Ejecutar al cargar la página
+        fetchData();
+    </script>
+</body>
+</html>

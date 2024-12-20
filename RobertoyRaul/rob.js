@@ -1,5 +1,6 @@
 //document.getElementById("mostrar").addEventListener("click", mostrarCosas, true);
-document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+document.getElementById("mostrar").addEventListener("click", Creartabla, true);
+//document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 
 let contenido = document.querySelector("#contenido");
@@ -23,7 +24,6 @@ fetch("https://randomuser.me/api/")
             let imagen= `<img src="${url_foto}" alt="Mi ejemplo">`;
             contenido.innerHTML += `${imagen}<br>`;
     })
-    
 }
 
 function mostrarCosas()
@@ -38,7 +38,7 @@ function mostrarCosas()
     }
 }
 
-function mostrarCosas()
+function Creartabla()
 {
     contenido.innerHTML = 'Tabla '
     for(i=0; i<5; i ++)

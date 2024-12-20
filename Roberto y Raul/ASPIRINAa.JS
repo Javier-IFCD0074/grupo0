@@ -44,5 +44,5 @@ function mostrarMensajeError() {
 
 function borrarDatosAPI() {
     console.log("Ha pulsado borrar usuario");
-    contenido.innerHTML = "";
+    Codigo.innerHTML = "";
 }

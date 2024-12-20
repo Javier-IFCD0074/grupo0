@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo num. 2 para trabajar con API</title>
+    <title>Farmacia</title>
     <style>
         div {color:white;
         font-size: 28px;
@@ -11,12 +11,17 @@
     </style>
 </head>
 <body>
-     <input type="nºregistro" >
-    <!-- Comentario de prueba -->
-    <button id="mostrar">Mostrar Medicamento</button> <br>
-    <button id="limpiar">Borrar Medicamento</button>
+    <form>
+        <br><label for="fname">Por favor, introduzca el código del medicamento :</label><br>
+        <br><input type="text" id="numreg" name=""><br>        
+    </form>
+        
+    <br><button id="mostrar">Mostrar Medicamento</button><br>
+    <br><button id="limpiar">Borrar Medicamento</button><br>
+
     <div id="contenido"></div>
-<script src="tools.js">
-</script>
+
+    <script src="tools.js"></script>
+
 </body>
 </html>

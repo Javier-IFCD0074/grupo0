@@ -5,7 +5,7 @@
     "Apellido": "Salazar",
     "Profesión": "Profesor",
     "Edad": 54,
-    "Hijos": ["María", "Sergio", "Miguel", "Esther", { "Mascota": "Gato", "Bebida": "Cocacola"}] 
+    "Datos adicionales": ["María", "Sergio", "Miguel", "Esther", { "Mascota": "Gato", "Bebida": "Cocacola"}] 
     },
 
     {

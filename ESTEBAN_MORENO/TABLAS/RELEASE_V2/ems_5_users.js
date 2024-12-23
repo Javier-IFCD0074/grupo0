@@ -1,5 +1,5 @@
 //document.getElementById("mostrar").addEventListener("click", mostrarCosas, true);
-document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI_V2, true);
 //document.getElementById("mostrar").addEventListener("click", crear_tabla_v2, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 document.getElementById("rellenar").addEventListener("click", rellenar_tabla_v3, true);
@@ -7,6 +7,35 @@ document.getElementById("rellenar").addEventListener("click", rellenar_tabla_v3,
 let contenido = document.querySelector("#contenido");
 let tCabecera = document.querySelector("#cabecera");
 let tCuerpo   = document.querySelector("#cuerpo");
+
+function mostrarDatosAPI_V2()
+{
+//contenido.innerHTML = 'Hola Mundo';
+console.log('Ha pulsado mostrar usuario');
+fetch("https://randomuser.me/api?results=5")
+    .then(res => res.json())
+    .then(data =>{
+            console.log(data);
+            let mi_tabla = '<table border=1><thead><tr><th>H1</th><th>H2</th><th>H3</th></tr></thead><tbody>'
+            for(i=0; i<5; i++)
+            {   
+                contenido.innerHTML += '<tr>'; // Empieza la fila
+                for(j=0; j<3; j++)
+                    contenido.innerHTML += `<td> Celda ${i}-${j} </td>`;
+                contenido.innerHTML += '</tr>'; // Final de fila
+            }
+            contenido.innerHTML += '</tbody></table>';
+
+        for (i=0; i<5; i++)
+          contenido.innerHTML+=`${data.results[i].name.first}<br>`;
+
+            let url_foto = data.results [0].picture.large;
+            console.log(url_foto);
+            let imagen= `<img src="${url_foto}" alt="Mi ejemplo">`;
+            contenido.innerHTML += `${imagen}<br>`;
+    })
+    
+}
 
 function mostrarDatosAPI()
 {

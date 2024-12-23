@@ -1,1 +1,0 @@
-<img src="mi_imagen.jpg" id="miImagen" onmouseover="this.style.width = '200px'" onmouseout="this.style.width = '100px'"></img>

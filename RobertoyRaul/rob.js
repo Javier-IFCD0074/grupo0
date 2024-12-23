@@ -3,6 +3,7 @@ document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, tr
 document.getElementById("mostrar").addEventListener("click", Crear_tabla_v1, true);
 //document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
+document.getElementById("mostrar").addEventListener("click", Crear_tabla_v3, true);
 
 let contenido = document.querySelector("#contenido");
 
@@ -30,6 +31,29 @@ fetch("https://randomuser.me/api?results=5")
             contenido.innerHTML += `${imagen}<br>`;
     })
 }
+function mostrarDatosAPI_v2()
+{
+    //contenido.innerHTML = 'Hola Mundo';
+    console.log('Ha pulsado mostrar usuario');
+    fetch("https://randomuser.me/api?results=5")
+        .then(res => res.json())
+        .then(data =>{
+                console.log(data);
+                let persona = data.results [0].name;
+                console.log(persona);
+                mi_tabla += '<tr>'; // Empieza la fila
+                mi_tabla += `${persona.title} `;
+                mi_tabla += ` ${persona.first} `;
+                mi_tabla += ` ${persona.last} <br>`;
+                    
+    
+                let mi_tabla = '<table<table border=1><thead><tr><th>H1</th><th>H2</th><th>H3</th></tr></thead><tbody>'
+                 data.results [0].picture.large;
+                console.log(url_foto);
+                let imagen= `<img src="${url_foto}" alt="Mi ejemplo">`;
+                contenido.innerHTML += `${imagen}<br>`;
+        })
+    }
 
 function mostrarCosas()
 {
@@ -56,6 +80,18 @@ function Crear_tabla_v0()
     contenido.innerHTML +=  'fin';
 }
 function Crear_tabla_v1()
+{
+    contenido.innerHTML = '<Table border=1>'
+    for(i=0; i<3; i ++)
+    {   
+        contenido.innerHTML +=    `<tr>`; //EMPIEZA LA FILA
+        for(j=0; j<3; j ++)
+            contenido.innerHTML += ` <td> Celda ${i} ${j} </td>`;
+        contenido.innerHTML +=  '</tr>'; //FINAL DE LA FILA
+    }
+    contenido.innerHTML +=  'fin';
+}
+function Crear_tabla_v3()
 {
     contenido.innerHTML = '<Table border=1>'
     for(i=0; i<3; i ++)

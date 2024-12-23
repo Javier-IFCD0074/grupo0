@@ -1,5 +1,5 @@
 //document.getElementById("mostrar").addEventListener("click", mostrarCosas, true);
-document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI_v3, true);
 //document.getElementById("mostrar").addEventListener("click", crear_tabla_v2, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 document.getElementById("rellenar").addEventListener("click", rellenar_tabla_v3, true);
@@ -29,6 +29,88 @@ fetch("https://randomuser.me/api?results=5")
             console.log(url_foto);
             let imagen= `<img src="${url_foto}" alt="Mi ejemplo">`;
             contenido.innerHTML += `${imagen}<br>`;
+    })
+    
+}
+
+function mostrarDatosAPI_v2()
+{
+//contenido.innerHTML = 'Hola Mundo';
+
+console.log('Ha pulsado mostrar usuario');
+fetch("https://randomuser.me/api?results=5")
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data);
+        let mi_tabla = '<table border=1><thead><tr><th>Title</th><th>Nombre</th><th>Apellido</th></tr></thead><tbody>'
+        for(i=0; i<5; i++)
+        {   
+            let persona = data.results[i].name;
+            console.log(persona);
+            mi_tabla += '<tr>'; // Empieza la fila
+            mi_tabla += `<td> ${persona.title} </td>`;
+            mi_tabla += `<td> ${persona.first} </td>`;
+            mi_tabla += `<td> ${persona.last} </td>`;
+            mi_tabla += '</tr>'; // Final de fila
+        }
+
+        mi_tabla += '</tbody></table>';
+        contenido.innerHTML = mi_tabla;
+
+        let url_foto = data.results [0].picture.large;
+        console.log(url_foto);
+        let imagen= `<img src="${url_foto}" alt="Mi ejemplo">`;
+        contenido.innerHTML += `${imagen}<br>`;
+    })
+    
+}
+
+function incrustarFoto(url_foto, nombre)
+{
+    console.log(url_foto);
+    //let imagen= `<img src="${url_foto}" alt="Mi ejemplo">`;
+    let imagen= `<a href="http://www.google.com"><img src="${url_foto}" title="${nombre}" alt="Mi ejemplo"></a>`;
+    // contenido.innerHTML += `${imagen}<br>`;
+
+    return imagen;
+
+    // let codigoHTML = `<a href="${url_foto}"> Ver Foto </a>`;
+    // return codigoHTML;
+}
+
+function filaUsario(individuo, url_imagen)
+{
+    let mi_fila = '<tr>'; // Empieza la fila
+    mi_fila += `<td> ${individuo.title} </td>`;
+    mi_fila += `<td> ${individuo.first} </td>`;
+    mi_fila += `<td> ${individuo.last} </td>`;
+    mi_fila += `<td> ${ incrustarFoto(url_imagen, individuo.first) } </td>`;
+    mi_fila += '</tr>'; // Final de fila
+
+    return mi_fila;
+}
+
+
+function mostrarDatosAPI_v3()
+{
+//contenido.innerHTML = 'Hola Mundo';
+
+console.log('Ha pulsado mostrar usuario');
+fetch("https://randomuser.me/api?results=5")
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data);
+        let mi_tabla = '<table border=1><thead><tr><th>Title</th><th>Nombre</th><th>Apellido</th><th>Foto</th></tr></thead><tbody>'
+        for(i=0; i<5; i++)
+        {   
+            let persona = data.results[i].name;
+            let url_foto = data.results[i].picture.thumbnail;
+            console.log(persona);
+            mi_tabla += filaUsario(persona, url_foto);
+        }
+
+        mi_tabla += '</tbody></table>';
+        contenido.innerHTML = mi_tabla;
     })
     
 }

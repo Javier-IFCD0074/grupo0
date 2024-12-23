@@ -1,8 +1,8 @@
 //document.getElementById("mostrar").addEventListener("click", mostrarCosas, true);
-document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
-//document.getElementById("mostrar").addEventListener("click", crear_tabla_v2, true);
+//document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI, true);
+document.getElementById("mostrar").addEventListener("click", crear_tabla_v2, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
-document.getElementById("rellenar").addEventListener("click", rellenar_tabla_v3, true);
+document.getElementById("rellenar").addEventListener("click", rellenar_tabla_v0, true);
 
 let contenido = document.querySelector("#contenido");
 let tCabecera = document.querySelector("#cabecera");
@@ -117,53 +117,8 @@ function rellenar_tabla_v1()
     }
 }
 
-function rellenar_tabla_v2()
-{
-    let fila='<tr><th>H1</th><th>H2</th><th>H3</th></tr>';
-    console.log(fila);
-    tCabecera.innerHTML = fila;
-    console.log(fila);
-    for(i=0; i<5; i++)
-    {   
-        fila='<tr>'; // Empieza la fila
-        for(j=0; j<3; j++)
-            fila += `<td> Celda ${i*3 + j+1} </td>`;
-        fila += '</tr>'; // Final de fila
-        //console.log(fila);
-        tCuerpo.innerHTML += fila; // Añadir fila
-    }
-}
-
-function rellenar_tabla_v3()
-{
-    let fila='<tr><th>Multiplicando</th><th>Multiplicador</th><th>Producto</th></tr>';
-    console.log(fila);
-    tCabecera.innerHTML = fila;
-    console.log(fila);
-
-    // En este bucle preparamos las filas
-    for(i=0; i<5; i++)
-    {   
-        fila='<tr>'; // Empieza la fila
-        fila += `<td> 7 </td>`;
-        fila += `<td> ${i} </td>`;
-        fila += `<td> ${7*i} </td>`;
-
-        /*for(j=0; j<3; j++)
-            fila += `<td> Celda ${i*3 + j+1} </td>`; */
-
-        fila += '</tr>'; // Final de fila
-        //console.log(fila);
-        tCuerpo.innerHTML += fila; // Añadir fila
-    }
-}
-
 function limpiarDatosAPI()
 {
     console.log('Ha pulsado borrar usuario');
-    // Vaciar el contenido de la caja
     contenido.innerHTML = '';
-    // Vaciar el contenido de la tabla (cabecera y cuerpo)
-    tCabecera.innerHTML = '';
-    tCuerpo.innerHTML = '';
 }

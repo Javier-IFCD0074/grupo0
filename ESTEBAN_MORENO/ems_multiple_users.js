@@ -89,6 +89,19 @@ function mostrarCosas()
     }
 }
 
+function crear_tabla_V4()
+{
+    fila.innerHTML = '<Table border=1>'
+    for(i=0; i<5; i++)
+    {
+        fila='<tr>'
+        for(j=0; j<3; j++)
+            fila.innerHTML += `<td> Celda ${i*3 + j+1} </td>`;
+        fila.innerHTML += '</tr>';         // Termina Fila.
+    }
+    fila.innerHTML += '</table>'
+}
+
 function crear_tabla_V3()
 {
     contenido.innerHTML = '<Table border=1>'

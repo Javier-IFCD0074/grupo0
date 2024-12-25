@@ -1,4 +1,4 @@
-document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI_v3, true);
+document.getElementById("MostrarRegistros").addEventListener("click", mostrarDatosAPI_v3, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 document.getElementById("rellenar").addEventListener("click", rellenar_tabla_v3, true);
 

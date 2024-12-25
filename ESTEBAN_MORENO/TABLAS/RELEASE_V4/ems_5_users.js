@@ -1,6 +1,4 @@
-//document.getElementById("mostrar").addEventListener("click", mostrarCosas, true);
 document.getElementById("mostrar").addEventListener("click", mostrarDatosAPI_v3, true);
-//document.getElementById("mostrar").addEventListener("click", crear_tabla_v2, true);
 document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
 document.getElementById("rellenar").addEventListener("click", rellenar_tabla_v3, true);
 
@@ -10,7 +8,6 @@ let tCuerpo   = document.querySelector("#cuerpo");
 
 function mostrarDatosAPI()
 {
-//contenido.innerHTML = 'Hola Mundo';
 console.log('Ha pulsado mostrar usuario');
 fetch("https://randomuser.me/api?results=5")
     .then(res => res.json())
@@ -35,7 +32,6 @@ fetch("https://randomuser.me/api?results=5")
 
 function mostrarDatosAPI_v2()
 {
-//contenido.innerHTML = 'Hola Mundo';
 
 console.log('Ha pulsado mostrar usuario');
 fetch("https://randomuser.me/api?results=5")
@@ -93,7 +89,6 @@ function filaUsario(individuo, url_imagen)
 
 function mostrarDatosAPI_v3()
 {
-//contenido.innerHTML = 'Hola Mundo';
 
 console.log('Ha pulsado mostrar usuario');
 fetch("https://randomuser.me/api?results=5")

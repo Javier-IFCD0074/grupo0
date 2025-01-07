@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo num. 3 para trabajar con API</title>
+   <title>Ejemplo para trabajar con API de animales</title>
+
+</head>
+<body>
+    <!-- *** -->
+    <div class="button container">
+        <input type="number" id="MostrarRegistros" placeholder="Número reg. devolver">
+        <button onclick="mostrarDatosAPI_v3()">Buscar</button>
+        <!--<button id="mostrar">Mostrar Usuario</button> <br> -->
+        <button id="limpiar">Borrar Usuario</button>
+      
+    </div>
+    <div id="contenido"></div>
+
+<script src="bichos.js">
+</script>
+</body>
+</html>
+
+    <!-- 
+        function enviarNumero() {
+            // Obtenemos el valor del input
+            let numero = document.getElementById("miNumero").value;
+
+            // Enviamos el valor a otra función o lo procesamos aquí
+            // Por ejemplo, mostrar el valor en una alerta:
+            alert("El número ingresado es: " + numero);
+
+            // O enviar el valor a otro archivo usando AJAX (para casos más complejos)
+            // ...
+        }
+
+        function enviarNumero() {
+            let numero = document.getElementById("miNumero").value;
+            fetch('tu_ruta_al_archivo.php', {
+                method: 'POST',
+                body: JSON.stringify({ numero: numero })
+            })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        }
+    -->
+        

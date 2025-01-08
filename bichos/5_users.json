@@ -1,0 +1,290 @@
+{
+    "results": [
+        {
+            "gender": "male",
+            "name": {
+                "title": "Mr",
+                "first": "Curtis",
+                "last": "Fox"
+            },
+            "location": {
+                "street": {
+                    "number": 2004,
+                    "name": "The Drive"
+                },
+                "city": "Drogheda",
+                "state": "Waterford",
+                "country": "Ireland",
+                "postcode": 42799,
+                "coordinates": {
+                    "latitude": "-3.3853",
+                    "longitude": "-88.9521"
+                },
+                "timezone": {
+                    "offset": "-9:00",
+                    "description": "Alaska"
+                }
+            },
+            "email": "curtis.fox@example.com",
+            "login": {
+                "uuid": "3423d5e5-78bc-4bdf-b5a9-d0358e86c0e7",
+                "username": "redlion884",
+                "password": "electra",
+                "salt": "CIUXR39B",
+                "md5": "d11f1c2a34ce5ba1bd29b400024a3007",
+                "sha1": "303bd98bbfdbcb19ed619b1d8b04244ddefd2b7e",
+                "sha256": "cc9b577329e840dbe2bafb8cdf9c164aa61d50a6f39b17b6dc58dadeb9ad3ed0"
+            },
+            "dob": {
+                "date": "1947-07-04T14:12:09.475Z",
+                "age": 77
+            },
+            "registered": {
+                "date": "2006-05-18T18:38:47.034Z",
+                "age": 18
+            },
+            "phone": "041-954-7094",
+            "cell": "081-629-4159",
+            "id": {
+                "name": "PPS",
+                "value": "9363064T"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/men/36.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/36.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/36.jpg"
+            },
+            "nat": "IE"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "Mrs",
+                "first": "Jonna",
+                "last": "Ijzermans"
+            },
+            "location": {
+                "street": {
+                    "number": 7738,
+                    "name": "Eikenmeet"
+                },
+                "city": "Wilhelminadorp",
+                "state": "Gelderland",
+                "country": "Netherlands",
+                "postcode": "7718 VQ",
+                "coordinates": {
+                    "latitude": "27.2124",
+                    "longitude": "-87.9677"
+                },
+                "timezone": {
+                    "offset": "+3:00",
+                    "description": "Baghdad, Riyadh, Moscow, St. Petersburg"
+                }
+            },
+            "email": "jonna.ijzermans@example.com",
+            "login": {
+                "uuid": "e729ef6b-5197-4b87-9a8c-7f5708410ba2",
+                "username": "lazydog480",
+                "password": "julius",
+                "salt": "aFteaTOj",
+                "md5": "ef71c4d403ba869e63b9bef24ed6413c",
+                "sha1": "d02f6fcc61bca34131311e89a33e3aed2ebc1084",
+                "sha256": "a139a8b242bc97ba8bbc8ccb84cb1ca6ff62909980904c4de1b03241008e8a20"
+            },
+            "dob": {
+                "date": "1964-09-05T09:39:46.276Z",
+                "age": 60
+            },
+            "registered": {
+                "date": "2019-07-09T07:18:18.209Z",
+                "age": 5
+            },
+            "phone": "(0499) 454466",
+            "cell": "(06) 26342843",
+            "id": {
+                "name": "BSN",
+                "value": "82163055"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/59.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/59.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/59.jpg"
+            },
+            "nat": "NL"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "Mrs",
+                "first": "Lilja",
+                "last": "Savela"
+            },
+            "location": {
+                "street": {
+                    "number": 970,
+                    "name": "Reijolankatu"
+                },
+                "city": "Sonkajärvi",
+                "state": "North Karelia",
+                "country": "Finland",
+                "postcode": 21384,
+                "coordinates": {
+                    "latitude": "-0.4653",
+                    "longitude": "4.2039"
+                },
+                "timezone": {
+                    "offset": "+11:00",
+                    "description": "Magadan, Solomon Islands, New Caledonia"
+                }
+            },
+            "email": "lilja.savela@example.com",
+            "login": {
+                "uuid": "265d9d04-500d-40f7-bf78-67baf4a574d7",
+                "username": "sadfrog438",
+                "password": "shan",
+                "salt": "3SmrhboV",
+                "md5": "d9a308546d37f2e28a4283089235d4ac",
+                "sha1": "4e269603299d662b3e600751c7f26c320de456ff",
+                "sha256": "a21579e7aa8f31efa99d229fd508ebb5f6cf8f62fb04976d59e315457ba31167"
+            },
+            "dob": {
+                "date": "1945-12-20T07:40:52.677Z",
+                "age": 79
+            },
+            "registered": {
+                "date": "2019-03-14T01:41:29.338Z",
+                "age": 5
+            },
+            "phone": "04-268-770",
+            "cell": "049-856-15-59",
+            "id": {
+                "name": "HETU",
+                "value": "NaNNA160undefined"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/90.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/90.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/90.jpg"
+            },
+            "nat": "FI"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "Ms",
+                "first": "Emma",
+                "last": "Poulsen"
+            },
+            "location": {
+                "street": {
+                    "number": 7652,
+                    "name": "Fjordvej"
+                },
+                "city": "Juelsminde",
+                "state": "Hovedstaden",
+                "country": "Denmark",
+                "postcode": 28637,
+                "coordinates": {
+                    "latitude": "-22.0513",
+                    "longitude": "128.7192"
+                },
+                "timezone": {
+                    "offset": "-7:00",
+                    "description": "Mountain Time (US & Canada)"
+                }
+            },
+            "email": "emma.poulsen@example.com",
+            "login": {
+                "uuid": "42a5099b-b1dd-4a5e-bd6f-1bd52eb34103",
+                "username": "browngorilla290",
+                "password": "aries",
+                "salt": "sttT6EsH",
+                "md5": "e45d8e4a7a869a7ee0a905ff26e82ead",
+                "sha1": "2a6e2a5408e152b13cf0ab8e47fba421425f35ac",
+                "sha256": "bb7e2d54a558222d7e282cb60b63da891a3ea7ba7b1a704ebce40a4ac0f305f7"
+            },
+            "dob": {
+                "date": "1964-03-07T01:51:22.650Z",
+                "age": 60
+            },
+            "registered": {
+                "date": "2015-07-05T03:16:41.009Z",
+                "age": 9
+            },
+            "phone": "35675560",
+            "cell": "40766084",
+            "id": {
+                "name": "CPR",
+                "value": "060364-0972"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/43.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/43.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/43.jpg"
+            },
+            "nat": "DK"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "Miss",
+                "first": "Vicky",
+                "last": "Williamson"
+            },
+            "location": {
+                "street": {
+                    "number": 4898,
+                    "name": "The Green"
+                },
+                "city": "Portsmouth",
+                "state": "Herefordshire",
+                "country": "United Kingdom",
+                "postcode": "SU7 4RH",
+                "coordinates": {
+                    "latitude": "48.0767",
+                    "longitude": "107.5513"
+                },
+                "timezone": {
+                    "offset": "-3:00",
+                    "description": "Brazil, Buenos Aires, Georgetown"
+                }
+            },
+            "email": "vicky.williamson@example.com",
+            "login": {
+                "uuid": "b560de44-9dbb-40ec-9a28-8e2a13c4dc3c",
+                "username": "brownleopard396",
+                "password": "parker",
+                "salt": "eGWe4FIb",
+                "md5": "f8a65d0252fbe9d41c9894be10dda6dc",
+                "sha1": "007c30fa356a6fd1632e496f5975d6197f887686",
+                "sha256": "a75d02b1e01d00e1089dd5c0a62d2e152edc5e4df0b9eaece203442431b5d542"
+            },
+            "dob": {
+                "date": "1987-06-28T00:07:54.706Z",
+                "age": 37
+            },
+            "registered": {
+                "date": "2013-09-27T22:38:24.255Z",
+                "age": 11
+            },
+            "phone": "017683 89737",
+            "cell": "07141 035936",
+            "id": {
+                "name": "NINO",
+                "value": "XT 51 72 20 M"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/47.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/47.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/47.jpg"
+            },
+            "nat": "GB"
+        }
+    ],
+    "info": {
+        "seed": "5fe07b10bf10b407",
+        "results": 5,
+        "page": 1,
+        "version": "1.4"
+    }
+}

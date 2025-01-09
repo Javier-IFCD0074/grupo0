@@ -190,7 +190,7 @@ function rellenar_tabla_v1()
             fila += `<td> Celda ${i}-${j} </td>`;
         fila += '</tr>'; // Final de fila
         //console.log(fila);
-        tCuerpo.innerHTML += fila; // Añadir fila
+        tCuerpo.innerHTML += fila; // Añadir fila //
     }
 }
 

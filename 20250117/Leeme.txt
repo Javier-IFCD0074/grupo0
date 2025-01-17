@@ -1,0 +1,34 @@
+Ejemplos realizados en la semana 13-17 de Enero 2025
+Recomiendo archivos bat para iniciar ambos servidores
+(da igual el orden):
+ - API (puerto 3000): ofrece varios comandos (CORS activo)
+ - WEB (puerto 8000): permite lanzar el archivo cliente.html
+
+Pruebas recomendadas usando el web browser.
+===========================================================
+[1] Lanzar cliente.html y tocar los botones
+
+MUCHA ATENCION: para que funcione bien cliente.html es necesario
+                abrirlo asi:  http://localhost:8000/cliente.html
+
+Así NO funciona (política CORS): C:/sw/grupo0/20250117/cliente.html
+===========================================================
+[2] Lanzar comandos a la API directamente:
++-----------+-----------------------------------------------------------+
+| COMANDO   | COMPORTAMIENTO                                            |
++-----------+-----------------------------------------------------------+
+| eco       | devuelve un mensaje similar al enviado                    |
+| operación | realiza cálculos matemáticos (inacabado)                  |
+| belleza   | lista JSON de chicas guapas, pero solo algunas XD         |
+| saludo    | un mensaje cordial, en formato HTML                       |
+| inicio    | genera el menú principal (también sale si no hay comando) |
+| <ERROR>   | La respuesta cuando para preguntas imprevistas            |
++-----------+-----------------------------------------------------------+
+Una versión futura mostrará un menú inicial en HTML con varias opciones
+
+------------------------------------------------
+Avanzado: cuando el web browser abre la página web desde el sistema de
+archivos, compone la URL de un modo distinto a la navegación de internet.
+Eso tiene efecto en la política de CORS y fallan los FETCH hacia la API.
+
+Esta URL no vale: file:///C:/sw/grupo0/20250117/cliente.html

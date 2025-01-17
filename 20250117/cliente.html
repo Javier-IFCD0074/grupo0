@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo num. 1 para trabajar con API</title>
+
+</head>
+<body>
+    <!-- Comentario de prueba -->
+    <button id="prueba">Eco</button> <br>
+    <p id="parrafo">  </p> <br>
+    <button id="mostrar">Chicas</button> <br>
+    <button id="limpiar">Borrar</button>
+    <div id="contenido"></div>
+    <script>
+        document.getElementById("prueba").addEventListener("click", mostrarParrafo, true);
+        document.getElementById("mostrar").addEventListener("click", mostrarChicas, true);
+        document.getElementById("limpiar").addEventListener("click", limpiarDatosAPI, true);
+        let hueco = document.querySelector("#parrafo");
+        let contenido = document.querySelector("#contenido");
+
+        function mostrarParrafo()
+        {
+            //hueco.innerHTML = 'Hola Mundo';
+            //const url = "http://localhost:3000/operacion=4+5";
+            const url = "http://localhost:3000/eco=Me gusta la pizza";
+
+            fetch(url)
+                .then(res => res.text())
+                .then(data =>{
+                     console.log(data);
+                     hueco.innerHTML = data;
+                })
+        }
+
+        function mostrarChicas()
+        {
+            fetch("http://localhost:3000/belleza")
+            .then(res => res.json())
+            .then(data =>{
+                    console.log(data);
+                    n=data.length;
+                    contenido.innerHTML = '';
+                    for (let i=0; i<n; i++)
+                    {
+                        hueco.innerHTML += data[i].nombre + '<br>';
+                    }
+                })
+                
+        }
+
+        function limpiarDatosAPI()
+        {
+            console.log('Ha pulsado borrar');
+            hueco.innerHTML = '';
+            contenido.innerHTML = '';
+        }
+    </script>
+</body>
+</html>

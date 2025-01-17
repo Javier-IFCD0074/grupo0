@@ -1,0 +1,17 @@
+        h1, h2, h3 {
+            color: green;
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: red
+        }
+
+        ol {
+            color: purple;
+        }
+        
+        p { 
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: blue;
+        }
+        body { color: cyan}

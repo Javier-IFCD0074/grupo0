@@ -8,10 +8,10 @@
 </head>
 <body>
     <!-- Comentario de prueba -->
-    <button id="prueba">Eco</button> <br>
+    <button id="limpiar">Borrar</button><br>
+    <button id="prueba">Eco</button><br>
     <p id="parrafo">  </p> <br>
     <button id="mostrar">Chicas</button> <br>
-    <button id="limpiar">Borrar</button>
     <div id="contenido"></div>
     <script>
         document.getElementById("prueba").addEventListener("click", mostrarParrafo, true);
@@ -44,7 +44,7 @@
                     contenido.innerHTML = '';
                     for (let i=0; i<n; i++)
                     {
-                        hueco.innerHTML += data[i].nombre + '<br>';
+                        contenido.innerHTML += data[i].nombre + '<br>';
                     }
                 })
                 

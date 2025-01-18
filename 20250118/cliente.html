@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo num. 1 para trabajar con API</title>
+    <style>
+        h2 { color: orange }
+        h3 { text-decoration: underline;color:cornflowerblue }
+    </style>
+</head>
+<body>
+    <!-- Comentario de prueba (como ejemplo) -->
+    <h1 id="arriba">Resumen del curso hasta hoy (18/01/2025)</h1>
+    <p> En esta página se recopila aspectos esenciales vistos durante
+        el curso, en 7 semanas (desde el 4 de diciembre
+        hasta el 17 de Enero).</p>
+    <p style="color:red"> La parte de MySQL no está recogida aquí, sólo se
+        comenzó un poco y ha quedado pendiente terminarlo.
+    </p>
+    <ol>
+        <li><a href="#ExtAPI">
+            Ejemplos de fetch hacia una API externa
+        </a><ul>
+                <li><a href="#11">Random user</a></li>
+                <li><a href="#12">CIMA (farmacia)</a></li>
+                <li><a href="#13">Open data Santander</a></li>
+                <!-- Otras opciones de API propuestas a los alumnos
+                     para investigar, trabajar y profundizar en casa-->
+                <li>IMDb (películas)</li>
+                <li>Mercadona</li>
+                <li>Pokémon</li>
+            </ul>
+        </li>
+        <li><a href="#ConAPI">
+            Ejemplos que usan nuestra API
+        </a><ul>
+                <li><a href="#21">Generador de eco</a></li>
+                <li><a href="#22">Operación matemática</a></li>
+                <li><a href="#23">Lista de actrices</a></li>
+                <li><a href="#24">Saludo cordial</a></li>
+                <li><a href="#25">Menú de inicio</a></li>
+                <li><a href="#26">Mensaje de error</a></li>
+            </ul>
+        </li>
+        <li><a href="#SinAPI">
+            Ejemplos sin utilizar API
+        </a><ul>
+                <li><a href="#31">Calculadora</a></li>
+                <li><a href="#32">DNI/NIF/NIE</a></li>
+                <li><a href="#33">Números primos</a></li>
+                <li><a href="#39">Otra opción</a></li>
+            </ul>
+        </li>
+    </ol>
+
+    <hr>
+    <h2 id="ExtAPI">Conectar con API externa</h2>
+    <h3 id="11">Random user</h3>
+    <h3 id="12">CIMA (farmacia)</h3>
+    <h3 id="13">Open data Santander</h3>
+
+    <hr>
+    <h2 id="ConAPI">Utilizando nuestra API</h2>
+    <pre style="background-color: black;color:white;width:60ch" >
+1234567890123456789012345678901234567890123456789012345678901234567890
+        <b style="color:cyan">Requisitos:</b> 
+        Es necesario tener python y node.js instalado
+        Se emplean dos servidores:
+          * API
+          * WEB
+    </pre>
+
+    <p style="background-color: black;color:white;width:60ch;font-family: monospace;" >
+        1234567890123456789012345678901234567890123456789012345678901234567890
+                %20<b style="color:cyan">Requisitos:</b> <br>
+                %20Es necesario tener python y node.js instalado <br>
+                %20Se emplean dos servidores: <br>
+                %20%20%20* API <br>
+                %20%20%20* WEB <br>
+            </p>
+        
+    <h3 id="21">Generador de eco</h3>
+    <p>Para mostrar el resultado usamos una etiqueta de tipo <b>&lt;p&gt;</b> </p>
+    <button id="limpiar">Borrar</button><br>
+    <button id="prueba">Eco</button><br>
+    <p id="parrafo"></p><br>
+
+    <h3 id="22">Operación matemática</h3>
+    <h3 id="23">Lista de actrices</h3>
+    <p>Solicitamos un objeto JSON a nuestra API y lo representamos en una lista</p>
+    <button id="botonActrices">Lista</button> <br>
+    <div id="actrices"></div>
+
+    <h3 id="24">Saludo cordial</h3>
+    <p>La API nos envía</p>
+    <h3 id="25">Menú de inicio</h3>
+    <h3 id="26">Mensaje de error</h3>
+
+
+    <hr>
+    <h2 id="SinAPI">Ejemplos que no usan API</h2>
+    <p>En diciembre también hicimos código sencillo para practicar con HTML, JS y CSS</p>
+
+    <a href="#"><button>Top</button></a>
+    <h3 id="31">Calculadora</h3>
+    <a href="#"><button>Top</button></a>
+    <h3 id="32">DNI/NIE</h3>
+    <h3 id="33">Números primos</h3>
+    <p>Este ejemplo lo corrimos en node.js pero ha sido muy fácil de adaptar al navegador </p>
+
+<!--Es necesario colocar la carga de JS al final
+    (debajo de las etiquetas html que llevan
+    el selector id="...", como button, p y div) 
+    para que la declaracion de variables se 
+    realice después de crear los objetos a los
+    que van ligados -->
+    <script src="funciones.js"></script>
+
+</body>
+</html>

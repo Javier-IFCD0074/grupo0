@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo num. 1 para trabajar con API</title>
     <style>
-        h2 { color: orange }
-        h3 { text-decoration: underline;color:cornflowerblue }
+        h2 { color:#FFD275; background-color:#7E6B8F;width: 600px;font-family: sans-serif;}
+        h3 { color:#6A041D; text-decoration: underline; }
+        /*ol { width: 600px; background: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);}*/
+        ol { width: 600px; background: linear-gradient(to top, #ff9a9e , #fecfef );}
     </style>
 </head>
 <body>
     <!-- Comentario de prueba (como ejemplo) -->
     <h1 id="arriba">Resumen del curso hasta hoy (18/01/2025)</h1>
-    <p> En esta página se recopila aspectos esenciales vistos durante
-        el curso, en 7 semanas (desde el 4 de diciembre
-        hasta el 17 de Enero).</p>
+    <p> Esta página recopila aspectos esenciales vistos en
+        el curso, durante 7 semanas (del 4 de diciembre
+        al 17 de Enero).</p>
     <p style="color:red"> La parte de MySQL no está recogida aquí, sólo se
         comenzó un poco y ha quedado pendiente terminarlo.
     </p>
@@ -49,65 +51,133 @@
                 <li><a href="#31">Calculadora</a></li>
                 <li><a href="#32">DNI/NIF/NIE</a></li>
                 <li><a href="#33">Números primos</a></li>
-                <li><a href="#39">Otra opción</a></li>
+                <!-- <li><a href="#39">Otra opción</a></li> -->
             </ul>
         </li>
     </ol>
 
+    <!-- ******************************************* 
+            EJEMPLOS CON SERVICIOS EXTERNOS (API) 
+         ******************************************* -->
     <hr>
     <h2 id="ExtAPI">Conectar con API externa</h2>
-    <h3 id="11">Random user</h3>
-    <h3 id="12">CIMA (farmacia)</h3>
-    <h3 id="13">Open data Santander</h3>
+    <img src="esquemaExt.png" alt="" title="Esquema del entorno a utilizar" width="600px">
 
+    <!------------------------------------------------------------------->
+    <hr><h3 id="11">Random user</h3>
+    <p>Obtener información del portal <strong>Random User Generator</strong></p>
+    <p>Para más información pulsa <a href="https://randomuser.me/" target="_blank"><strong>AQUÍ</strong></a></p>
+
+    <div class="cajaBotones">
+        <input type="number" id="numUsuarios" value="5" size="1" placeholder="Número regs. devolver">
+        <button id="botonUsuarios">Solicitar</button>
+        <button id="borraUsuarios">Borrar</button>
+    </div>
+    <div id="cajaUsuarios"></div>
+
+    <!------------------------------------------------------------------->
+    <hr><h3 id="12">CIMA (farmacia)</h3>
+    <p>Obtener información de CIMA</p>
+    <a href="https://sede.aemps.gob.es/docs/CIMA-REST-API_1_19.pdf" target="_blank">Instrucciones</a>
+    <p><strong>CIMA: </strong>Centro de información online de medicamentos de la AEMPS</p>
+    <p><strong>AEMPS: </strong>Agencia Española de Medicamentos y Productos Sanitarios</p>
+
+    <hr><h3 id="13">Open data Santander</h3>
+    <p>Obtener información del portal del Ayuntamiento de Santander</p>
+    <pre>http://datos.santander.es/data/</pre>
+
+    <!-- ********************************** 
+              EJEMPLOS CON NUESTRA API 
+         ********************************** -->
     <hr>
     <h2 id="ConAPI">Utilizando nuestra API</h2>
+    <a href="#"><button>Subir</button></a>
+    <img src="esquemaLoc.png" alt="" title="Esquema del entorno a utilizar" width="600px">
     <pre style="background-color: black;color:white;width:60ch" >
-1234567890123456789012345678901234567890123456789012345678901234567890
+
         <b style="color:cyan">Requisitos:</b> 
         Es necesario tener python y node.js instalado
         Se emplean dos servidores:
           * API
           * WEB
     </pre>
+    <p>Arrancar los servidores usando los archivos api.bat y web.bat</p>
+    <p>Iniciar el navegador con la URL del servidor WEB y puerto 8000</p>
+    <img src="00.png" alt="00.png" title="Aspecto de las ventanas " width="600px">
+    <!--------------------------------------------------------------------------->
 
-    <p style="background-color: black;color:white;width:60ch;font-family: monospace;" >
-        1234567890123456789012345678901234567890123456789012345678901234567890
-                %20<b style="color:cyan">Requisitos:</b> <br>
-                %20Es necesario tener python y node.js instalado <br>
-                %20Se emplean dos servidores: <br>
-                %20%20%20* API <br>
-                %20%20%20* WEB <br>
-            </p>
-        
-    <h3 id="21">Generador de eco</h3>
+    <hr><h3 id="21">Generador de eco</h3>
     <p>Para mostrar el resultado usamos una etiqueta de tipo <b>&lt;p&gt;</b> </p>
-    <button id="limpiar">Borrar</button><br>
-    <button id="prueba">Eco</button><br>
-    <p id="parrafo"></p><br>
+    <p id="parrafoEco" style="font-family: monospace;background-color: black;color: white; width: 150px;">
+        Aquí sale el eco
+    </p>
+    <input type="text" id="textoEco" value="Viva Torrelavega" size="25" placeholder="Mensaje a enviar"><br>
+    <button id="botonEco">Eco</button>
+    <button id="borraEco">Borrar</button><br>
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="22">Operación matemática</h3>
+    <input type="text" id="txtOperacion" value="100+7" size="25" placeholder="Escribe operación"><br>
+    <input type="text" name="resOperacion" size="25" readonly>
+    <button id="botonOperar">Operar</button>
 
-    <h3 id="22">Operación matemática</h3>
-    <h3 id="23">Lista de actrices</h3>
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="23">Lista de actrices</h3>
     <p>Solicitamos un objeto JSON a nuestra API y lo representamos en una lista</p>
-    <button id="botonActrices">Lista</button> <br>
-    <div id="actrices"></div>
+    <button id="botonActrices">Lista</button>
+    <button id="borraActrices">Borra</button> <br>
+    <div id="cajaActrices"></div>
 
-    <h3 id="24">Saludo cordial</h3>
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="24">Saludo cordial</h3>
     <p>La API nos envía</p>
-    <h3 id="25">Menú de inicio</h3>
-    <h3 id="26">Mensaje de error</h3>
 
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="25">Menú de inicio de la API</h3>
+    <p>Para abrir en otra ventana el servicio WEB de nuestra API, 
+    <a href="http://localhost:3000/inicio" target="_blank">pulsa aquí</a></p>
 
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="26">Mensaje de error</h3>
     <hr>
-    <h2 id="SinAPI">Ejemplos que no usan API</h2>
-    <p>En diciembre también hicimos código sencillo para practicar con HTML, JS y CSS</p>
 
+    <!-- ********************************** 
+                 EJEMPLOS SIN API 
+         ********************************** -->
+
+    <h2 id="SinAPI">Ejemplos que no usan API</h2>
+    <p>En diciembre también hicimos código sencillo para practicar HTML y JS</p>
     <a href="#"><button>Top</button></a>
-    <h3 id="31">Calculadora</h3>
-    <a href="#"><button>Top</button></a>
-    <h3 id="32">DNI/NIE</h3>
-    <h3 id="33">Números primos</h3>
-    <p>Este ejemplo lo corrimos en node.js pero ha sido muy fácil de adaptar al navegador </p>
+
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="31">Calculadora</h3>
+    <p>Introduce dos números para hacer una suma</p>
+    <!-- Dos cajas de texto para introducir números -->
+    <pre>Sumandos:</pre>
+    <form name="sumaSencilla" action="">
+        <input type="text" name="num1" maxlenght="6" size="2" value="111">
+        <input type="text" name="num2" maxlenght="6" size="2" value="444"><br>
+        <!-- Botón implementado mediante tag input en lugar de button -->
+        <pre>Resultado:</pre>
+        <input type="button" value="Suma v1" onclick="this.form.resultadoSuma.value=sumaV1(this.form.num1.value,this.form.num2.value);">        
+        <input type="button" value="Suma v2" onclick="this.form.resultadoSuma.value=sumaV2(this.form.num1.value,this.form.num2.value);"><br>        
+        <input type="text" name="resultadoSuma" size="2" readonly>
+    </form>
+
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="32">DNI/NIE</h3>
+    <p>Generador de la letra del documento de identificación (DNI o NIE). Funciona también con tarjetas de extranjeros.</p>
+    <form name="letradni" action="">
+        <p>Introduce el número de identificación (8) sin la letra final:</p>
+        <!-- Dos cajas de texto: la primera recibe el número y en la segunda genera la letra -->
+        <input type="text" name="numdni" maxlenght="9" size="9" placeholder="8 caracteres">
+        <!-- Botón implementado mediante tag input en lugar de button -->
+        <input type="button" value="Generar" onclick="this.form.letra.value=calcLetra(this.form.numdni.value);">
+        <input type="text" name="letra" size="1" readonly>
+    </form>    
+
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="33">Números primos</h3>
+    <p>Este ejemplo lo corrimos en node.js pero resulta muy fácil de adaptar al navegador </p>
 
 <!--Es necesario colocar la carga de JS al final
     (debajo de las etiquetas html que llevan

@@ -97,17 +97,19 @@ let div_actrices = document.querySelector("#cajaActrices");
 // Solicita la informacion JSON y rellena el div
 function pideActrices()
 {
+    console.log('Ha pulsado el botón para ver lista de actrices');
     fetch("http://localhost:3000/belleza")
     .then(res => res.json())
     .then(data =>{
         console.log(data);
         n=data.length;  // Averigua cuántos elementos hay
+        console.log('Lista de actrices tiene ', n);
         let lista = '<ul>'; // Comienza lista HTML (desordenada)
         for (let i=0; i<n; i++)
         { // Para cada item de la lista, coge nombre y nacimiento
             lista += `<li>${data[i].nombre} (${data[i].nace}) </li>`;
         }
-        lista = '</ul>'; // Terminar la lista con el tag adecuado
+        lista += '</ul>'; // Terminar la lista con el tag adecuado
         div_actrices.innerHTML = lista;
     })
 }
@@ -137,7 +139,7 @@ function pideOperar()
     fetch(url)
         .then(res => res.text())
         .then(data =>{
-             console.log(data);
+             console.log('Respuesta: ', data);
              opRespuesta.value = data;
         })
 }

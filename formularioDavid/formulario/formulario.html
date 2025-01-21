@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulario.css">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <h1>FORMULARIO DE EJEMPLO</h1>
+    <video autoplay muted loop id="background-video">
+        <source src="https://v.etsystatic.com/video/upload/ac_none,du_15,q_auto:good/Capybara_Twerk_urfmjy.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    <form action="procesar.php" method="POST">
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+    
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" id="apellido" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="telefono">Telefono:</label>
+        <input type="tel" name="telefono" id="telefono" required>
+
+        <label for="fecha">Fecha de nacimiento:</label>
+        <input type="date" name="fecha" id="fecha" required>
+
+        <button style="text-align: center;" type="submit">Enviar</button>
+        <button style="text-align: center;" type="reset">Borrar</button>
+
+    </form>
+
+</body>
+</html>

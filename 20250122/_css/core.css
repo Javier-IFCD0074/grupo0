@@ -1,0 +1,58 @@
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+/*
+body {
+    background-image: url("../_img/background-3.jpg");
+    background-repeat: no-repeat;
+    background-size: 50% 75%;
+}*/
+
+body {
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+
+@font-face {
+    font-family: TypeMachine;
+    src: url('../_fonts/type-machine.ttf');
+}
+
+.titulo {
+    font-weight: bold;
+    display: block;
+}
+
+.sangria-5px {
+    margin-left: 5px;
+}
+
+textarea {
+    height: 100px;
+    width: 250px;
+    resize: none;
+}
+
+/*h1, h2, 
+h3, h4 {
+    font-family: TypeMachine;
+}*/
+
+/*body,
+input,
+textarea,
+select,
+option {
+    font-family: "Monsieur La Doulaise";
+}
+
+#cuadrado {
+    height: 175px;
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 175px;
+}*/

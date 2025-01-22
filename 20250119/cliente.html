@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo (API)</title>
+    <style>
+        body {font-family: sans-serif;}
+        h2 { width: 450px;background-color:violet; 
+             color: purple; border: solid purple; }
+        h3 { width: 300px;background-color:lime }
+        ol { width: 400px; background: linear-gradient(to top, lime , violet );}
+    </style>
+</head>
+<body>
+    <!-- Comentario de prueba (como ejemplo) -->
+    <h1 id="arriba">Resumen del curso hasta hoy (19/01/2025)</h1>
+    <p> Esta página recopila aspectos esenciales vistos en el curso, 
+        durante 7 semanas (del 4 de diciembre al 17 de enero).</p>
+    <!--p style="color:red"> La parte de MySQL no está recogida aquí, 
+        sólo se comenzó un poco y ha quedado pendiente terminarlo. </p-->
+    <ol>
+        <li><a href="#ExtAPI">
+            Ejemplos de fetch hacia una API externa
+        </a><ul>
+                <li><a href="#11">Random user</a></li>
+                <li><a href="#12">CIMA (farmacia)</a></li>
+                <li><a href="#13">Open data Santander</a></li>
+                <!-- Otras opciones de API propuestas a los alumnos
+                     para investigar, trabajar y profundizar en casa-->
+                <li>IMDb (películas)</li>
+                <li>Mercadona</li>
+                <li>Pokémon</li>
+            </ul>
+        </li>
+        <li><a href="#ConAPI">
+            Ejemplos que usan nuestra propia API
+        </a><ul>
+                <li><a href="#21">Generador de eco</a></li>
+                <li><a href="#22">Operación matemática</a></li>
+                <li><a href="#23">Lista de actrices</a></li>
+                <li><a href="#24">Saludo cordial</a></li>
+                <li><a href="#25">Menú de inicio</a></li>
+                <li><a href="#26">Mensaje de error</a></li>
+            </ul>
+        </li>
+        <li><a href="#SinAPI">
+            Ejemplos sin utilizar ninguna API
+        </a><ul>
+                <li><a href="#31">Calculadora que suma</a></li>
+                <li><a href="#32">Letra del DNI/NIF/NIE</a></li>
+                <li><a href="#33">Lista de números primos</a></li>
+                <!-- <li><a href="#39">Otra opción</a></li> -->
+            </ul>
+        </li>
+    </ol>
+
+    <!-- ******************************************* 
+            EJEMPLOS CON SERVICIOS EXTERNOS (API) 
+         ******************************************* -->
+    <hr>
+    <h2 id="ExtAPI">Conectar con API externa de internet</h2>
+    <img src="esquemaExt.png" alt="" title="Esquema que describe las entidades que participan" width="600px">
+
+    <!------------------------------------------------------------------->
+    <hr><h3 id="11">Random user</h3>
+    <p>Obtener información del portal <strong>Random User Generator</strong></p>
+    <p>Para más información pulsa <a href="https://randomuser.me/" target="_blank"><strong>AQUÍ</strong></a></p>
+
+    <div class="cajaBotones">
+        <input type="number" id="numUsuarios" value="3" size="1" placeholder="Número regs. devolver">
+        <button id="botonUsuarios">Solicitar</button>
+        <button id="borraUsuarios">Borrar</button>
+    </div>
+    <div id="cajaUsuarios"></div>
+
+    <!------------------------------------------------------------------->
+    <hr><h3 id="12">CIMA (farmacia)</h3>
+    <a href="https://cima.aemps.es/cima/publico/detalle.html?nregistro=51347" target="_blank">Detalles de aspirina</a>
+    
+    <p>
+       <strong>CIMA: </strong>Centro de Información online de Medicamentos de la AEMPS<br>
+       <strong>AEMPS: </strong>Agencia Española de Medicamentos y Productos Sanitarios
+    </p>
+    <p>Obtener información de CIMA: 
+    <a href="https://sede.aemps.gob.es/docs/CIMA-REST-API_1_19.pdf" target="_blank">instrucciones (PDF)</a></p>
+    <p>Ejemplo de aplicación: diseño, desarrollo, manual, vídeo, etc. <br>
+       Medical Reminder <a href="https://openaccess.uoc.edu/bitstream/10609/145870/9/asignes86TFM0522memoria.pdf" target="_blank">(PDF download)</a>
+    </p>
+    <table border=1>
+        <thead>
+            <tr style="background: blue; color:white">
+                <th>Medicamento</th>
+                <th>Número Referencia</th>
+            </tr>
+        </thead>
+        <tbody id="tabla">
+            <tr><td>Aspirina</td><td>51347</td></tr>
+            <tr><td>Ibuprofeno</td><td>63607</td></tr>
+            <tr><td>Paracetamol</td><td>89145</td></tr>
+            <tr><td>Frenadol</td><td>49269</td></tr>
+            <tr><td>Diliban</td><td>75633</td></tr>
+            <tr><td>Omeprazol</td><td>69487</td></tr>
+            <tr><td>Insucor</td><td>71284</td></tr>
+            <tr><td>Flecainida</td><td>79337</td></tr>
+            <tr><td>Daflon</td><td>59080</td></tr>
+            <tr><td>Actithiol</td><td>46249</td></tr>
+            <tr><td>Verzenios</td><td>1181307015</td></tr>
+        </tbody>
+    </table>
+    <br>
+    <input type="text" size="15" title="Escribe el número de referencia" placeholder="Num. Ref." value="51347" id="numReg" autofocus required/>
+    <button id="botonFarmacia">Consultar a CIMA</button><br>
+    <div id="cajaMedicamento"></div>
+    <!------------------------------------------------------------------->
+    <hr><h3 id="13">Open data Santander</h3>
+    <p>Obtener información del portal del Ayuntamiento de Santander</p>
+    <a href="http://datos.santander.es/data/" target="_blank">http://datos.santander.es/data/</a>
+
+    <!-- ********************************** 
+              EJEMPLOS CON NUESTRA API 
+         ********************************** -->
+    <hr>
+    <h2 id="ConAPI">Utilizando nuestra propia API</h2>
+    <a href="#"><button>Ir al menú</button></a><br>
+    <img src="esquemaLoc.png" alt="" title="Esquema del entorno a utilizar" width="600px">
+    <pre style="color:white; background-color: black; width:70ch" >
+        <b style="color:cyan">
+        Requisitos:</b> 
+        Es necesario tener python y node.js instalado
+        Se emplean dos servidores:
+          * API: publica información mediante varios comandos
+          * WEB: publica los archivos que componen esta página
+    </pre>
+    <p>Arrancar los servidores usando los archivos api.bat y web.bat</p>
+    <p>Iniciar el navegador con la URL del servidor WEB y puerto 8000 y después<br>
+       elegir este mismo archivo haciendo click (cliente.html) para obtenerlo con el<br>
+       protocolo HTTP y funcione todo (mecanismo de fetch y política de CORS).</p>
+    <img src="00.png" alt="00.png" title="Aspecto de las ventanas " width="600px">
+    <!--------------------------------------------------------------------------->
+
+    <hr><h3 id="21">Generador de eco</h3>
+    <p>En este caso, la API nos devuelve la información en formato texto. <br>
+       Para mostrar el resultado usamos una etiqueta de tipo <b>&lt;p&gt;</b>, <br>
+       Se elige ese tipo de etiqueta sólo como ejemplo, hay más opciones. </p>
+    <p id="parrafoEco" style="font-family: monospace;background-color: black;color: white; width: 150px;">
+        Aquí sale el eco
+    </p>
+    <input type="text" id="textoEco" value="Viva Torrelavega" size="25" placeholder="Mensaje a enviar"><br>
+    <button id="botonEco">Eco</button>
+    <button id="borraEco">Borrar</button><br>
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="22">Operación matemática</h3>
+    <p>En este caso, la API nos devuelve la información en formato texto. <br>
+        Para mostrar el resultado usamos un <i>text-box</i> mediante <b>&lt;input type="text"&gt;</b>, <br>
+        Se elige ese tipo de objeto sólo como ejemplo, hay más opciones. </p>
+    <input type="text" id="txtOperacion" value="100+7" size="25" placeholder="Escribe operación"><br>
+    <input type="text" id="resOperacion" size="25" readonly>
+    <button id="botonOperar">Operar</button>
+
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="23">Lista de actrices</h3>
+    <p>Solicitamos un objeto JSON a nuestra API y lo representamos en una lista</p>
+    <button id="botonActrices">Lista</button>
+    <button id="borraActrices">Borra</button> <br>
+    <div id="cajaActrices" style="width: 300px; background-color: lightskyblue;"></div>
+
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="24">Saludo cordial</h3>
+    <p>La API nos envía sus mejores deseos.</p>
+    <button id="botonSaludo">Saludar</button>
+    <p id="marcos"></p>
+    <iframe width="300" height="50" id="marcoSaludo" style="background-color: lightblue;"
+            src="https://www.html6.es/final1.html">
+    </iframe>
+    
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="25">Menú de inicio de la API</h3>
+    <p>Para abrir en otra ventana el servicio WEB de nuestra API, 
+    <a href="http://localhost:3000/inicio" target="_blank">pulsa aquí</a></p>
+
+
+    <p>Para abrir en este recuadro el servicio WEB de nuestra API:</p>
+    <button id="botonMenu">Menú</button><br>
+    <!-- <iframe width="400" height="200" src="https://www.html6.es/final2.html" frameborder="0" id="marcoMenu"> -->
+    <iframe width="300" height="200" id="marcoMenu" style="background-color: lightblue;"
+            src="https://www.html6.es/final2.html">
+    </iframe>
+
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="26">Mensaje de error</h3>
+    <hr>
+
+    <!-- ********************************** 
+                 EJEMPLOS SIN API 
+         ********************************** -->
+
+    <h2 id="SinAPI">Ejemplos que no usan ninguna API</h2>
+    <a href="#"><button>Ir al menú</button></a>
+    <p>En diciembre también hicimos código sencillo para practicar HTML y JS</p>
+
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="31">Calculadora que suma</h3>
+    <p>Introduce dos números para hacer una suma</p>
+    <!-- Dos cajas de texto para introducir números para sumar -->
+    <pre>Sumandos:</pre>
+    <form name="sumaSencilla" action="">
+        <input type="text" name="num1" maxlenght="6" size="2" value="111">
+        <input type="text" name="num2" maxlenght="6" size="2" value="444"><br>
+        <!-- Botón implementado mediante tag input en lugar de button -->
+        <pre>Resultado:</pre>
+        <input type="button" value="Suma v1" onclick="this.form.resultadoSuma.value=sumaV1(this.form.num1.value,this.form.num2.value);">        
+        <input type="button" value="Suma v2" onclick="this.form.resultadoSuma.value=sumaV2(this.form.num1.value,this.form.num2.value);"><br>        
+        <input type="text" name="resultadoSuma" size="2" readonly>
+    </form>
+
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="32">Letra del DNI/NIE/NIF</h3>
+    <p>Generador de la letra del documento de identificación (DNI o NIE). Funciona también con tarjetas de extranjeros.</p>
+    <form name="letradni" action="">
+        <p>Introduce el número de identificación (8) sin la letra final:</p>
+        <!-- Dos cajas de texto: la primera recibe el número y en la segunda genera la letra -->
+        <input type="text" name="numdni" maxlenght="9" size="9" placeholder="8 caracteres">
+        <!-- Botón implementado mediante tag input en lugar de button -->
+        <input type="button" value="Generar" onclick="this.form.letra.value=calcLetra(this.form.numdni.value);">
+        <input type="text" name="letra" size="1" readonly>
+    </form>    
+
+    <!--------------------------------------------------------------------------->
+    <hr><h3 id="33">Lista de números primos</h3>
+    <p>Este ejemplo lo corrimos en node.js pero resulta muy fácil de adaptar al navegador </p>
+
+<!--=========================================
+    ===========ARCHIVO JAVASCRIPT============
+    ========================================= -->
+<!--Es necesario colocar la carga de JS al final (debajo de las etiquetas html que 
+    llevan el selector id="...", como button, p y div)  para que la declaracion de
+    variables se realice después de crear los objetos a los que van ligados.
+    Hay otros modos de solucionarlo, pero esta manera resulta simple y efectiva. -->
+    <script src="funcionesV2.js"></script>
+
+</body>
+</html>

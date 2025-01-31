@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html 
+lang="es">
+
+    <head>
+
+        <meta 
+        charset="UTF-8" />
+        <meta 
+        name="viewport" 
+        content="width=device-width, 
+        initial-scale=1.0">
+
+        <link 
+        href="./_css/core.css" 
+        type="text/css" 
+        rel="stylesheet" />
+
+        <link 
+        rel="preconnect" 
+        href="https://fonts.googleapis.com" />
+
+        <link 
+        rel="preconnect" 
+        href="https://fonts.gstatic.com" 
+        crossorigin />
+
+        <link 
+        href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" 
+        rel="stylesheet" />
+
+        <title>
+            Document
+        </title>
+
+    </head>
+    <body>
+
+        <form 
+        id="formulario-registro">
+
+            <p>
+                <span 
+                class="titulo">
+                    Nombre
+                </span> 
+
+                <input 
+                id="nom" 
+                name="nombre" 
+                type="text" 
+                placeholder="Nombre" 
+                maxlength="20" 
+                required />
+
+                <span 
+                id="valor_msg_error_nom">
+                </span>
+            </p>
+            <p>
+                <span 
+                class="titulo">
+                    Apellidos
+                </span> 
+
+                <input 
+                id="ape" 
+                name="apellidos" 
+                type="text" 
+                placeholder="Apellidos" 
+                maxlength="50" />
+
+                <span 
+                id="valor_msg_error_ape">
+                </span>
+            </p>
+            <p>
+                <span 
+                class="titulo">
+                    Teléfono
+                </span> 
+
+                <input 
+                id="tlfn" 
+                name="telefono" 
+                type="text" 
+                placeholder="Teléfono" 
+                maxlength="9" />
+
+                <span 
+                id="valor_msg_error_tlfn">
+                </span>
+            </p>
+            <p>
+                <span 
+                class="titulo">
+                    Correo
+                </span> 
+
+                <input 
+                id="mail" 
+                name="correo" 
+                type="text" 
+                placeholder="Correo" 
+                maxlength="80" />
+            </p>
+            <p>
+                <span 
+                class="titulo">
+                    Edad
+                </span> 
+
+                <input 
+                id="edad" 
+                name="edad" 
+                type="number" 
+                min="18" 
+                max="120" />
+            </p>
+            <p>
+                <span 
+                class="titulo">
+                    Sexo
+                </span> 
+
+                <input 
+                type="radio" 
+                name="sexo" 
+                value="F" /> Femenino
+                <br/>
+                <input 
+                type="radio" 
+                name="sexo" 
+                value="M" /> Masculino
+            </p>
+            <p>
+                <span 
+                class="titulo">
+                    Comunidad Autónoma
+                </span> 
+
+                <select 
+                id="input-comunidad" 
+                name="comunidad">
+
+                    <option 
+                    value="-1">
+                        - Elija una Comunidad -
+                    </option>
+                    <option 
+                    value="0">
+                        Asturias
+                    </option>
+                    <option 
+                    value="1">
+                        Cantabria
+                    </option>
+                    <option 
+                    value="2">
+                        Galicia
+                    </option>
+                    <option 
+                    value="3">
+                        Murcia
+                    </option>
+
+                </select>
+            </p>
+            <p>
+                <span 
+                class="titulo">
+                    Fichero
+                </span>
+                <input 
+                id="input-file" 
+                name="fichero" 
+                type="file" />
+            </p>
+
+            <p>
+                <span 
+                class="titulo">
+                    Intereses
+                </span> 
+
+                <input 
+                id="inp-ck-lectura" 
+                name="ck-lectura" 
+                type="checkbox" 
+                value="Lectura" /> Lectura
+                <input 
+                id="inp-ck-cocina" 
+                name="ck-cocina" 
+                type="checkbox" 
+                value="Cocina" /> Cocina
+                <input 
+                type="checkbox" 
+                id="inp-ck-informatica" 
+                name="ck-informatica" 
+                value="Informática" /> Informática
+                <input 
+                id="inp-ck-cosas-frikis" 
+                name="ck-cosas-frikis" 
+                type="checkbox" 
+                value="Cosas frikis" /> Cosas frikis
+
+            </p>
+
+            <p>
+                <span 
+                class="titulo">
+                    Recomendaciones
+                </span> 
+
+                <textarea 
+                id="inp-recomendaciones" 
+                name="recomendaciones" 
+                maxlength="200"></textarea>
+            </p>
+            <p>
+
+                <input 
+                id="btnEnviar" 
+                name="enviar" 
+                type="button" 
+                value="Enviar" />
+
+                <input 
+                type="reset" 
+                value="Reiniciar" />
+
+            </p>
+
+        </form>
+
+        <script 
+        src="./_js/validacion-formulario.js">
+        </script>
+
+    </body>
+
+    <!--<span>Esto es un span</span>
+        <div>Esto es un div</div>
+        Este texto contiene una <span>negrita</span> y también una letra <span>cursiva</span>.
+        <br/>
+        <br/>
+        Este texto contiene una <div>negrita</div> y también una letra <div>cursiva</div>.
+        <br/>-->
+
+        <!-- <h1>Encabezado de nivel 1</h1>
+        <p>Este sería el contenido del encabezado de nivel 1.</p>
+        <h2>Encabezado de nivel 2</h2>
+        Este sería el contenido del encabezado de nivel 2. -->
+
+        <!--<div 
+        id="cuadrado">
+            
+            <div>
+                Contenido
+                <br/>
+                <span 
+                class="typeMachine">
+                    Contenido con la nueva tipografía
+                </span>
+            </div>
+
+        </div>
+
+        <h2>Input</h2>
+        <p>
+            <h3>Text</h3>
+            <input 
+            type="text" 
+            value="El valor del input" 
+            maxlength="5" 
+            title="Casilla de texto" 
+            placeholder="Nombre" />
+
+            <h3>Number</h3>
+            <input 
+            type="number"
+            title="Casilla de número" 
+            placeholder="Número" 
+            max="10" 
+            min="-5" 
+            step="0.2" 
+            value="-5" />
+
+            <h3>PASSWORD</h3>
+            <input 
+            type="password"
+            title="Casilla de password" 
+            placeholder="Contraseña" />
+
+            <h3>CHECKBOX</h3>
+            <input 
+            type="checkbox"
+            title="Casilla de checkbox" 
+            value="Lectura" /> Lectura
+
+            <h3>RADIO</h3>
+            <input 
+            type="radio" 
+            name="sexo" 
+            title="Casilla de radio" 
+            value="F" /> Femenino
+
+            <input 
+            type="radio" 
+            name="sexo" 
+            title="Casilla de radio" 
+            value="M" /> Masculino
+
+            <h3>BUTTON</h3>
+            <input 
+            type="button" 
+            title="Botón" 
+            value="Aceptar" />
+
+            <button>
+                Aceptar
+            </button>
+
+            <h3>SUBMIT</h3>
+            <input 
+            type="submit" 
+            title="Botón submit" />
+
+            <h3>RESET</h3>
+            <input 
+            type="reset" 
+            title="Botón reset" />
+
+            <h3>FILE</h3>
+            <input 
+            type="file" 
+            title="Botón file" 
+            multiple />
+
+        </p>-->
+
+</html>

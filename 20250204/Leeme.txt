@@ -7,4 +7,10 @@ Evolución de la API:
 | 02_animales.js | CRUD completo (incluye PUT y DELETE)    |
 | 03_animales.js | Versión ligera (importa 03_animFunc.js) |
 | 03_animFunc.js | Funciones que manejan animales          |
+| Leeme.txt      | Este archivo                            |
+| ejemploMySQL.js| Conexión básica a la base de datos      |
++----------------+-----------------------------------------+
+| 04_dobleAPI.js | Ampliación de la API, doble propósito   |
+| 04_ciudadDB.js | Prototipo de ciudades (GET y database)  |
+| 04_animFunc.js | Funciones que manejan animales          |
 +----------------+-----------------------------------------+

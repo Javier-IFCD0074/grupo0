@@ -3,7 +3,7 @@ Evolución de la API:
 | Fichero        | Descripción                             |
 +----------------+-----------------------------------------+
 | 00_xpBase.js   | Estructura básica de API usando express |
-| 01_animales.js | Implementa parte del CRUD: GET y PUT    |
+| 01_animales.js | Implementa parte del CRUD: GET y POST   |
 | 02_animales.js | CRUD completo (incluye PUT y DELETE)    |
 | 03_animales.js | Versión ligera (importa 03_animFunc.js) |
 | 03_animFunc.js | Funciones que manejan animales          |

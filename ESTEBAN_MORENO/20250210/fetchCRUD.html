@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de peticiones CRUD</title>
+
+    <style>
+        .agrupacion {
+            display: grid;
+            grid-template-columns: 20% auto;
+        }
+
+        .caja {
+            background-color: cadetblue;
+            margin:5px;
+            border: 3px solid darkblue;
+            color: white;
+        }
+
+        #Resultado3 {
+            color: black;
+            /* margin-top: 0px; */
+            /* padding-top: 0px;  */
+        }
+        /* p { margin-top: 0px; }
+        h3 { padding-top: 0px; } */
+    </style>
+
+    <script>
+        // Segunda version: realizada con promesas (y tratamiento de errores)
+
+        async function leerElemento(identificador, url) {
+            // Preparar la peticion
+            const peticion = new Request("http://localhost:3000/datos/3", {
+                method: "GET",  // Por defecto el method es GET
+                //method: "POST",  // Por defecto el method es GET
+                //body: JSON.stringify({ username: "example" }),
+            });
+            // Lanzar la solicitud (por defecto el method es GET)
+            res=await fetch(peticion);
+            console.log("fetch(peticion) -> response.status=",res.status);
+            // Extraer la información
+            pagina=await res.text();
+            // Depositarla en la ubicación seleccionada
+            document.getElementById(identificador).innerHTML = pagina;
+        }
+
+        function leerTodos(identificador,url) {
+            // Preparar la peticion
+            const peticion = new Request("http://localhost:3000/datos", {
+                method: "GET",  // Por defecto el method es GET
+                //method: "POST",  // Por defecto el method es GET
+                //body: JSON.stringify({ username: "example" }),
+            });
+
+            fetch(peticion)  // Lanzar la solicitud
+                .then(res => res.text()) // Extraer la información
+                .then(pagina => {  // Depositarla en la ubicación seleccionado
+                    document.getElementById(identificador).innerHTML = pagina;
+                    })
+                .catch(error => {
+                    console.error('Error recibir la respuesta:', error);
+                });
+        }
+
+        async function actualizarElemento(identificador, url) {
+            // Preparar la peticion
+            const peticion = new Request("http://localhost:3000/datos/3", {
+                method: "GET",  // Por defecto el method es GET
+                //method: "POST",  // Por defecto el method es GET
+                //body: JSON.stringify({ username: "example" }),
+            });
+            // Lanzar la solicitud (por defecto el method es GET)
+            res=await fetch(peticion);
+            console.log("fetch(peticion) -> response.status=",res.status);
+            // Extraer la información
+            pagina=await res.text();
+            // Depositarla en la ubicación seleccionada
+            document.getElementById(identificador).innerHTML = pagina;
+        }
+
+        async function borrarElemento(identificador, url) {
+            // Preparar la peticion
+            const peticion = new Request("http://localhost:3000/datos/3", {
+                method: "DELETE",  // Por defecto el method es GET
+                //body: JSON.stringify({ username: "example" }),
+            });
+            // Lanzar la solicitud, el navegador envía una petición con método OPTIONS
+            // (preflight) antes de enviar el DELETE. Esto importa para el CORS
+            res=await fetch(peticion);
+            console.log("fetch(peticion) -> response.status=",res.status);
+            // Extraer la información
+            pagina=await res.text();
+            // Depositarla en la ubicación seleccionada
+            document.getElementById(identificador).innerHTML = pagina;
+        }
+
+
+</script>
+
+</head>
+
+<body>
+    <div class="agrupacion">
+        <div class="caja">
+            <a href="#" onclick="leerTodos('TomarVarios')">READ (todos)</a><br>
+        </div>
+
+        <div class="caja" id="TomarVarios">
+        </div>
+
+        <div class="caja">
+            <a href="#" onclick="leerElemento('TomarElemento')">READ (uno)</a><br>
+        </div>
+
+        <div class="caja" id="TomarElemento">
+        </div>
+
+        <div class="caja">
+            <a href="#" onclick="borrarElemento('BorrarElemento')">DELETE (uno)</a><br>
+        </div>
+
+        <div class="caja" id="BorrarElemento">
+        </div>
+
+        <!-- **********************************-->
+        <div class="caja">
+            <h3>Opciones:</h3>
+        </div>
+        <div class="caja" id="Resultado3">
+            <h3>Ejemplos de código para entender Fetch()</h3>
+            <p>Las cajas de arriba se rellenan con una página web que está en otro archivo (relleno.html); en el apartado <b>&lt;script&gt;</b> se han prepado código que maneja funciones asíncronas de JavaScript: fecth(), text(), json(), ...</p>
+            <p>Todo este código fuente, sirve para explicar progresivamente las promesas y el uso de <b>.then()</b> de manera sencilla y con un ejemplo práctico que se podrá usar en numerosos proyectos.</p>
+            <p>Pero antes de la función, por motivos didácticos, se plantea otra alternativa equivalente usando await. Dos ejemplos ilustran esta opción: uno fácil y otro mejor que añade control de errores.</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch de Dani</title>
+
+    
+<style>
+    /* Estilos para la página */
+    .agrupo 
+    {
+        display: grid;
+        grid-template-columns: 20% 50%;
+    }
+
+    .caja 
+    {
+        background-color: #E61E49;
+        margin:5px;
+        padding: 5px;
+        border: 3px solid #A37C40;
+        color: #07090F;
+    }
+    #Destino3 {
+            color: black;
+            margin-top: 5px; 
+            padding-top: 0px;
+        }
+        p { margin-top: 0px; }
+        h3 { padding-top: 0px; }
+</style>
+
+    <script>
+
+        // Primera versión, la mas báisca, (usamos await), no controlamos los errores.
+        async function cargarContenidoFacil(identificador, url) {
+            res=await fetch(url);
+            console.log(res.status);
+            pagina=await res.text();
+            document.getElementById(identificador).innerHTML = pagina;
+        }
+
+        // Segunda version: realizada con promesas, tratamiento de errores y control de flujo.
+        function cargarContenido_then(identificador,url) {
+        fetch(url)
+            .then(res => res.text()) // Extraer la información
+            .then(pagina => {  // Depositarla en la ubicación seleccionado
+            document.getElementById(identificador).innerHTML = pagina;
+            })
+            .catch(error => {
+            console.error('Error al cargar la página:', error);
+            });
+        }
+        
+        // Tercera versión (usando await). Incluimos el control de errores sin then.
+        async function cargarContenidoMejor(identificador, url) {
+            try {
+                res=await fetch(url);
+                console.log(res.status);
+                pagina=await res.text();
+                document.getElementById(identificador).innerHTML = pagina;
+            }
+            catch(error) {
+            console.error('Error al cargar la página:', error);
+            };
+        }
+        
+    </script>
+
+</head>
+<body>
+    <div class="agrupo">
+        <div class="caja">
+            <a href="#" onclick="cargarContenidoFacil('Destino0','fetchRelleno.html')">Fácil</a><br>
+        </div>
+
+        <div class="caja" id="Destino0">
+        </div>
+        
+        <div class="caja">
+            <a href="#" onclick="cargarContenidoMejor('Destino1','fetchRelleno.html')">Mejor [.then()]</a><br>
+        </div>
+
+        <div class="caja" id="Destino1">
+        </div>
+
+        <div class="caja">
+            <a href="#" onclick="cargarContenido_then('Destino2','fetchRelleno.html')">Try - Catch</a>
+        </div>
+
+        <div class="caja" id="Destino2">
+        </div>
+
+        <div class="caja">
+            <h3>Opciones:</h3>
+            <a href="#" onclick="cargarContenidoFacil('Destino0','fetchRelleno.html')">Facil</a><br>
+            <a href="#" onclick="cargarContenidoMejor('Destino1','fetchRelleno.html')">.then()</a><br>
+            <a href="#" onclick="cargarContenido_then('Destino2','fetchRelleno.html')">Try - Catch</a>
+        </div>
+        <div class="caja" id="Destino3">
+            <h3>Ejemplos de código para entender Fetch()</h3>
+            <p>Las cajas de arriba se rellenan con una página web que está en otro archivo (relleno.html); en el apartado <b>&lt;script&gt;</b> se han prepado código que maneja funciones asíncronas de JavaScript: fecth(), text(), json(), ...</p>
+            <p>Todo este código fuente, sirve para explicar progresivamente las promesas y el uso de <b>.then()</b> de manera sencilla y con un ejemplo práctico que se podrá usar en numerosos proyectos.</p>
+            <p>Pero antes de la función, por motivos didácticos, se plantea otra alternativa equivalente usando await. Dos ejemplos ilustran esta opción: uno fácil y otro mejor que añade control de errores.</p>
+        </div>
+    </div>
+</body>
+
+</html>

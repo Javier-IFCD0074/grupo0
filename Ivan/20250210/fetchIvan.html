@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Fecth</title>
+
+    <style>
+        .agrupacion {
+            display: grid;
+            grid-template-columns: 100px 400px;
+        }
+
+        .caja {
+            background-color: cadetblue;
+            margin:5px;
+            border: 3px solid darkblue;
+            color: white;
+        }
+
+        #Resultado3 {
+            color: black;
+            /* margin-top: 0px; */
+            /* padding-top: 0px;  */
+        }
+        /* p { margin-top: 0px; }
+        h3 { padding-top: 0px; } */
+    </style>
+
+    <script>
+        // Versión básica (usando await), sin control de errores
+        async function cargarContenidoFacil(identificador, url) {
+            // Obtener la página web (por defecto el method es GET)
+            res=await fetch(url);
+            // muestra el codigo de éxito/error
+            console.log(res.status);
+            // Extraer la información
+            pagina=await res.text();
+            // Depositarla en la ubicación seleccionada
+            document.getElementById(identificador).innerHTML = pagina;
+        }
+
+        // Primera versión, completa (usando await). Incluye control de errores
+        async function cargarContenidoMejor(identificador, url) {
+            try {
+                // Obtener la página web (por defecto el method es GET)
+                res=await fetch(url);
+                console.log(res.status);
+                // Extraer la información
+                pagina=await res.text();
+                // Depositarla en la ubicación seleccionado
+                document.getElementById(identificador).innerHTML = pagina;
+            }
+            catch(error) {
+            console.error('Error al cargar la página:', error);
+            };
+        }
+
+        // Segunda version: realizada con promesas (y tratamiento de errores)
+        function cargarContenido_then(identificador,url) {
+        fetch(url)  // Obtener la página web (por defecto el method es GET)
+            .then(res => res.text()) // Extraer la información
+            .then(pagina => {  // Depositarla en la ubicación seleccionado
+            document.getElementById(identificador).innerHTML = pagina;
+            })
+            .catch(error => {
+            console.error('Error al cargar la página:', error);
+            });
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="agrupacion">
+        <div class="caja">
+            <p>Por favor,pulsa <a href="fetchRelleno.html"> aqui</a></p> 
+
+            <a href="#" onclick="cargarContenidoFacil('Resultado0','fetchRelleno.html')">Fácil</a><br>
+        </div>
+
+        <div class="caja" id="Resultado0">
+        </div>
+        <div class="caja">
+            
+            <a href="#" onclick="cargarContenidoFacil('Resultado1','fetchRelleno.html')">Mejor</a><br>
+        </div>
+
+        <div class="caja" id="Resultado1">
+        </div>
+
+        <div class="caja">
+
+            <a href="#" onclick="cargarContenidoFacil('Resultado2','fetchRelleno.html')">.Then</a><br>
+        </div>
+
+        <div class="caja" id="Resultado2">
+        </div>
+
+
+       
+    </div>
+</body>
+
+</html>

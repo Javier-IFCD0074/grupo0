@@ -1,0 +1,79 @@
+[
+	{
+		"Codigo" : 4,
+		"Nombre" : "Ivan",
+		"Fila" : 1,
+		"Lugar_nacimiento" : null,
+		"Pelicula" : 1
+	},
+	{
+		"Codigo" : 7,
+		"Nombre" : "Esteban",
+		"Fila" : 1,
+		"Lugar_nacimiento" : null,
+		"Pelicula" : 2
+	},
+	{
+		"Codigo" : 10,
+		"Nombre" : "Raúl",
+		"Fila" : 3,
+		"Lugar_nacimiento" : null,
+		"Pelicula" : 3
+	},
+	{
+		"Codigo" : 14,
+		"Nombre" : "Tamara",
+		"Fila" : 4,
+		"Lugar_nacimiento" : null,
+		"Pelicula" : null
+	},
+	{
+		"Codigo" : 23,
+		"Nombre" : "Jonathan",
+		"Fila" : 2,
+		"Lugar_nacimiento" : "Torrelavega",
+		"Pelicula" : null
+	},
+	{
+		"Codigo" : 25,
+		"Nombre" : "Christian",
+		"Fila" : 2,
+		"Lugar_nacimiento" : "Torrelavega",
+		"Pelicula" : null
+	},
+	{
+		"Codigo" : 64,
+		"Nombre" : "Roberto",
+		"Fila" : 3,
+		"Lugar_nacimiento" : null,
+		"Pelicula" : null
+	},
+	{
+		"Codigo" : 70,
+		"Nombre" : "David",
+		"Fila" : 4,
+		"Lugar_nacimiento" : "Santander",
+		"Pelicula" : null
+	},
+	{
+		"Codigo" : 100,
+		"Nombre" : "Gabriel",
+		"Fila" : 4,
+		"Lugar_nacimiento" : null,
+		"Pelicula" : null
+	},
+	{
+		"Codigo" : 321,
+		"Nombre" : "Javier",
+		"Fila" : 1,
+		"Lugar_nacimiento" : "Santander",
+		"Pelicula" : null
+	},
+	{
+		"Codigo" : 154353,
+		"Nombre" : "Daniel",
+		"Fila" : 2,
+		"Lugar_nacimiento" : null,
+		"Pelicula" : null
+	}
+]

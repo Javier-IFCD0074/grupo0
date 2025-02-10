@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rosybrown;
+                color: white;
+            }
+        .rejilla {
+            background-color: blue;
+                border: 4px solid black;
+            display: grid; /*declara GRID LAYOUT*/
+            /* padding-top: 40px; */
+            grid-template-columns: auto auto auto ; 
+            /*crea 3 columnas auto*/
+            /* grid-template-columns: 100PX 200PX auto; 
+            crea 3 columnas de 100px 200px auto */
+            justify-content: center; 
+            /* centra el contenido   */
+            /* justify-content: start; */
+             /* alinea el contenido a la izquierda */ 
+             /* justify-content: end; 
+             alinea el contenido a la derecha */
+             /* justify-content: end space-between;
+              alinea el contenido a la derecha y distribuye el espacio entre los elementos */
+            /* justify-content: space-evenly; 
+            alinea el contenido a la derecha y distribuye el espacio entre los elementos */
+            /* justify-content: space-around;  */
+            /*alinea el contenido a la derecha y distribuye el espacio alrededor de los elementos*/
+            height: 500px;
+            align-content: center;
+             /* centrar el contenido */
+            /* align-content: start; */
+            /* alinea el contenido arriba */
+            /* align-content: end;  */
+            /* alinea el contenido abajo */
+            /* align-content: space-between; */
+             /* margin: 10px;
+             padding: 30px; */
+            }
+        .rejilla div {
+            background-color: cadetblue;
+            margin: 5px;
+            /* margin-left : 30px; */
+            /* margin: 10px 15px 20px 25px; */
+            padding-top: 20px;
+            padding: 10px;
+
+            /* height: 40px; */
+            /* width: 40px;    */
+            text-align: center;
+            border: 5px solid white;
+            /* float: left; */
+        }
+        .caja1 {
+            /* Grid-column: 1/3; */
+            /* se usa para indicar el número de columnas que ocupa el elemento */
+            grid-row: 1/5;
+            /* se usa para indicar el número de filas que ocupa el elemento */
+        }
+        /* .caja2 {
+                color: green;
+                font-size: 30px;
+        } */
+         h3{
+            color: blue;
+            margin-top: 30px;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+        pre{
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>La Etiqueta</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <pre>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Velit quos quia, 
+         similique eos sequi illo.</pre>
+    <!-- <h3>titulo a</h3>
+    <h3>titulo b</h3>
+    <h3>titulo c</h3>
+    <h3>titulo d</h3> -->
+
+    <div class="rejilla">
+    
+    <!-- div.caja${$}*9 -->
+    <div class="caja1">1</div>
+    <div class="caja2">2</div>
+    <div class="caja3">3</div>
+    <div class="caja4">4</div>
+    <div class="caja5">5</div>
+    <div class="caja6">6</div>
+    <div class="caja7">7</div>
+    <div class="caja8">8</div>
+    <div class="caja9">9</div>
+</div>     
+
+</body>
+</html>

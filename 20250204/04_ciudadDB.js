@@ -4,19 +4,27 @@ import mysql from 'mysql2/promise'
 //const mysql =require('mysql2/promise');
 
 
-const repositorio = {
+const repositorioHome = {
     host: '192.168.1.243',
     user: 'TestUser',
     password: 'P@ssw0rd',
     database: 'world'
 }
 
-const repositorio2 = {
+const repositorioNaiara = {
     host: '10.57.22.106',
     user: 'burro',
     password: 'itet2024',
     database: 'world'
 }
+
+const repositorio = {
+    host: 'localhost',
+    user: 'burro',
+    password: 'itet2024',
+    database: 'world'
+}
+
 
 const conexion = await mysql.createConnection(repositorio);
 //---------------------------------------------------------------
@@ -40,7 +48,7 @@ async function dameCiudades() {
     const filtro=['H','DEU'];
     const [respuesta] = await conexion.query ("SELECT id,Name, District, Population FROM city WHERE LEFT(Name,1)=? AND CountryCode=?;", filtro);
     console.log('dameCiudades() obtiene %d ciudades', respuesta.length);
-    return resp;
+    return respuesta;
 }
 
 // Busca el elemento por su codigo y obtiene una referencia
@@ -53,16 +61,40 @@ async function dameCiudad(codigo) {
     return captura;
 }
 
-// Añade un nuevo animal en la lista
-function insertaCiudad(campos) {
-    if ('nombre' in campos && 'patas' in campos) {
-        n++; // Incrementa el contador
+// Añade un nueva ciudad en la lista
+async function insertaCiudad(campos) {
+    //const sentenciaSQL = "INSERT INTO city (Name, CountryCode, District, Population) VALUES (?,'ESP',?,?);";
+    const sentenciaSQL = "INSERT INTO city (Name, CountryCode, District, Population) VALUES (?,?,?,?);";
+    console.log('Insertando ciudad:', campos);
+
+    //console.log(sentenciaSQL);
+
+    let codigoPais='ESP'; // Por defecto
+
+    if ('CountryCode' in campos) {
+        codigoPais=campos.CountryCode;
+    }
+
+    console.log('CodePais:', codigoPais);
+
+    //insert into city (name, countrycode, district, population)
+    //values('Noja','ESP','Cantabria',5000);
+
+    if ('Name' in campos && 'District' in campos && 'Population' in campos ) {
+        campos.Population = parseInt(campos.Population);        
+        const resultado = await conexion.query (sentenciaSQL, [campos.Name, codigoPais, campos.District, campos.Population]);
+
+        console.log(sentenciaSQL);
+
+        
+        /* n++; // Incrementa el contador
         // Crea el objeto incluyendo su código y los datos
         let nuevo={codigo:n, 
             nombre:campos.nombre, 
             patas:parseInt(campos.patas)};  // Convierte a número !!!
-        animales.push(nuevo); // Agregar al final de la lista
-        console.log('Nuevo animal:', nuevo);
+        animales.push(nuevo); // Agregar al final de la lista */
+
+        console.log('Nueva ciudad Insertada:', campos);
         return true;
     }
     else {
@@ -71,6 +103,28 @@ function insertaCiudad(campos) {
     }
 }
 
+// Borrar una ciudad de la lista
+async function eliminaCiudad(codigo) {
+    const sentenciaSQL = "DELETE FROM city WHERE ID=?;", codigo ;
+    console.log('Borrando ciudad:', codigo);
+
+    if (codigo > 0) {
+        
+        const resultado = await conexion.query (sentenciaSQL, [codigo]);
+
+        console.log(sentenciaSQL);
+
+        console.log('ID Ciudad Borrada:', codigo);
+        return true;
+    }
+    else {
+        console.log('Error Borrando ID:', codigo);
+        return false;
+    }
+}
+
+
+/*
 // Intenta eliminar una ciudad de la lista, buscando el código
 function eliminaCiudad(codigo) {
     // Buscamos el índice del elemento que deseamos borrar
@@ -85,6 +139,7 @@ function eliminaCiudad(codigo) {
         return false;
     }
 }
+*/    
 
 // Intenta cambiar los datos de un animal
 function modificaCiudad(candidato, campos) {

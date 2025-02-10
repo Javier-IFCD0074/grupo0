@@ -66,7 +66,7 @@ miAPI.get('/civitas/:id', async (req, res) => {
 
 // Metodo POST: para insertar datos
 miAPI.post('/civitas', (req, res) => {
-    detalles=req.query; // Das del nuevo elemento
+    let detalles=req.query; // Das del nuevo elemento
 
     if (urbano.insertaCiudad(detalles))
         res.status(201).send('Insertado');

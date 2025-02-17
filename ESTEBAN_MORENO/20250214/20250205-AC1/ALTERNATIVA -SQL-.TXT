@@ -1,0 +1,20 @@
+sentencia='SELECT id, Name, District, Population FROM city';
+let condicion='';
+--------------------------------------
+if (inicial)
+ condicion=" LEFT(NAME,1)='" +inicial + "'";
+
+if (codigoPais)
+{
+    // Esta vacio??
+    if (condicion.length > 0) condicion+=" AND";
+    condicion+=" COUNTRYCODE='" + codigoPais+ "'";
+}
+
+------------------------------
+
+if (condicion.length > 0)
+{
+sentencia+= ' WHERE'+ condicion;
+}
+

@@ -1,0 +1,13 @@
+{
+  "name": "20250204",
+  "version": "1.0.0",
+  "main": "00_xpBase.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}

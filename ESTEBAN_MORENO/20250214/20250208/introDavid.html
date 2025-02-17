@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>introduccion a CSS</title>
+
+<style>
+    body{
+        background-color: pink;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0px;
+        padding: 0px;
+            
+
+    }
+    h3 {
+        color: blue;
+        /* padding: 0px;
+        margin: 0px; */
+        margin-top: 10px;
+       
+    }
+    .rejilla {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+        height: 100vh;
+    }
+        
+       
+     
+    .rejilla div {
+        background-color: blue;
+        margin: 40;
+        padding: 20px;
+        height: 50px;
+        text-align: center;
+        text-overflow: unset;
+        border: 5px solid black;
+        
+        
+
+
+       /* float: left; */
+       
+        
+    }
+    .caja2 {
+        color: green;
+        font-size: 30px;
+
+    }
+
+    .caja1 {
+        grid-column: 3/4;
+    }
+
+    
+        h1{
+        color: black
+        
+    }
+    p {color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+</style>
+</head>
+
+<body>
+
+    <!-- <h3>Titulo A</h3>
+    <h3>Titulo B</h3>
+    <h3>Titulo C</h3>
+    <h3>Titulo D</h3> -->
+
+    <h1>LA ETIQUETA</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam a cupiditate culpa voluptates modi similique earum, ut aut esse odit, deleniti quod mollitia dolor enim consequatur soluta alias adipisci provident!</p>
+<pre>   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam a cupiditate culpa voluptates modi similique earum, ut aut esse odit, deleniti quod mollitia dolor enim consequatur soluta alias adipisci provident!</pre>
+   <div class="rejilla">
+   <!-- div.caja${$}*9 -->
+   <div class="caja1">1</div>
+   <div class="caja2">2</div>
+   <div class="caja3">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+   <div class="caja4">La etiqueta $lt;H1</div>
+   <div class="caja5">5</div>
+   <div class="caja6">6</div>
+   <div class="caja7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse excepturi fuga, facilis ratione dolorem quod?</div>
+   <div class="caja8">8</div>
+   <div class="caja9">9</div>
+
+    
+
+   </div>
+</body>
+</html>

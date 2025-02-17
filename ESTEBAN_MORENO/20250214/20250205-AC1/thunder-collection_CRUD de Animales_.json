@@ -1,0 +1,100 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "CRUD de Animales",
+    "collectionId": "c358d32c-91f3-4b36-a8bb-a5bd01954a10",
+    "dateExported": "2025-02-14T13:07:58.706Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1c52438f-dcc0-4bf6-8733-e9a6d320df2a",
+            "colId": "c358d32c-91f3-4b36-a8bb-a5bd01954a10",
+            "containerId": "",
+            "name": "Ver TODOS",
+            "url": "/datos/",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2025-02-13T09:21:44.267Z",
+            "modified": "2025-02-13T09:23:31.214Z",
+            "headers": []
+        },
+        {
+            "_id": "b1133f3c-e840-4cbf-be5a-65ac8080370b",
+            "colId": "c358d32c-91f3-4b36-a8bb-a5bd01954a10",
+            "containerId": "",
+            "name": "Ver GORRION",
+            "url": "/datos/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-02-13T08:16:53.626Z",
+            "modified": "2025-02-13T10:13:15.568Z",
+            "headers": []
+        },
+        {
+            "_id": "8694c121-b9e8-4e75-84a4-7579e147375e",
+            "colId": "c358d32c-91f3-4b36-a8bb-a5bd01954a10",
+            "containerId": "",
+            "name": "INSERTAR animal",
+            "url": "/datos?nombre=new animal 4&patas=12",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-02-13T09:08:02.613Z",
+            "modified": "2025-02-14T07:45:10.116Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "nombre",
+                    "value": "new animal 4",
+                    "isPath": false
+                },
+                {
+                    "name": "patas",
+                    "value": "12",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "679afea0-dcf6-463d-a64b-06cd12f99516",
+            "colId": "c358d32c-91f3-4b36-a8bb-a5bd01954a10",
+            "containerId": "",
+            "name": "DELETE animal",
+            "url": "/datos/10",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2025-02-13T09:10:21.962Z",
+            "modified": "2025-02-13T11:28:37.125Z",
+            "headers": []
+        },
+        {
+            "_id": "af08a75f-4cbb-4901-9475-12a13013e94b",
+            "colId": "c358d32c-91f3-4b36-a8bb-a5bd01954a10",
+            "containerId": "",
+            "name": "UPDATE animal",
+            "url": "/datos/10?nombre=new animal 32&patas=32",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2025-02-13T09:17:46.396Z",
+            "modified": "2025-02-14T07:45:33.690Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "nombre",
+                    "value": "new animal 32",
+                    "isPath": false
+                },
+                {
+                    "name": "patas",
+                    "value": "32",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:3000"
+        }
+    },
+    "ref": "V47fUPOVs9_NzCKcJ8HNcGlsrdpD-LZ-ZetoS8xxs2_DgUbEj7gHrD6qowcXDdIR2eIGCjDZnoISrcplfUwQng"
+}

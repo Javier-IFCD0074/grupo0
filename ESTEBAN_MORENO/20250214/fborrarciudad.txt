@@ -1,0 +1,29 @@
+// Intenta cambiar los datos de una Ciudad
+// Puede fallar si el codigo de la ciudad no existe o si
+// el usuario no tiene privilegios para hacer update.
+// Otro fallo puede ocurrir si los campos son inadecuados 
+async function modificaCiudad(codigo, campos) {
+    console.log('04 - Has entrado en modifica');
+    // const sentenciaSQL =  ("update city set (Name, CountryCode, District, Population) values (?, ?, ?, ?) WHERE id=?;", [codigo]);
+    const sentenciaSQL =  "UPDATE city SET Name=?, CountryCode=?, District=?, Population=? WHERE id=?";
+
+    let codigoPais= 'ESP';
+    if('CountryCode' in campos); //valor por defecto (ESPAÑA)
+        codigoPais = campos.CountryCode;
+    console.log(sentenciaSQL);
+    if ('Name' in campos  && 'District' in campos  && 'Population' in campos) {
+        // Crea el objeto incluyendo su código y los datos
+        const resultado = await conexion.query (sentenciaSQL,
+            [campos.Name, 
+            codigoPais,
+            campos.District,
+            parseInt (campos.Population),
+            codigo]);  
+        console.log('Nueva Ciudad:', resultado);
+        return true;
+    }
+    else {
+        console.log('Error insertando:',campos);
+        return false; 
+    }
+ }

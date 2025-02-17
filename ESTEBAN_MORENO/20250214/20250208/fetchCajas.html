@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Fecth</title>
+
+    <style>
+        .agrupacion {
+            display: grid;
+            grid-template-columns: 100px 40px;
+        }
+
+        .caja {
+            background-color: cadetblue;
+            margin:5px;
+            border: 3px solid darkblue;
+            color: white;
+        }
+
+        #Resultado3 {
+            color: black;
+            /* margin-top: 0px; */
+            /* padding-top: 0px;  */
+        }
+        /* p { margin-top: 0px; }
+        h3 { padding-top: 0px; } */
+    </style>
+
+    <script>
+        // Versión básica (usando await), sin control de errores
+        async function cargarContenidoFacil(identificador, url) {
+            // Obtener la página web (por defecto el method es GET)
+            res=await fetch(url);
+            console.log(res.status);
+            // Extraer la información
+            pagina=await res.text();
+            // Depositarla en la ubicación seleccionada
+            document.getElementById(identificador).innerHTML = pagina;
+        }
+
+        // Primera versión, completa (usando await). Incluye control de errores
+        async function cargarContenidoMejor(identificador, url) {
+            try {
+                // Obtener la página web (por defecto el method es GET)
+                res=await fetch(url);
+                console.log(res.status);
+                // Extraer la información
+                pagina=await res.text();
+                // Depositarla en la ubicación seleccionado
+                document.getElementById(identificador).innerHTML = pagina;
+            }
+            catch(error) {
+            console.error('Error al cargar la página:', error);
+            };
+        }
+
+        // Segunda version: realizada con promesas (y tratamiento de errores)
+        function cargarContenido_then(identificador,url) {
+        fetch(url)  // Obtener la página web (por defecto el method es GET)
+            .then(res => res.text()) // Extraer la información
+            .then(pagina => {  // Depositarla en la ubicación seleccionado
+            document.getElementById(identificador).innerHTML = pagina;
+            })
+            .catch(error => {
+            console.error('Error al cargar la página:', error);
+            });
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="agrupacion">
+        <div class="caja">
+             "
+        </div>
+
+        <div class="caja" id="Resultado0">
+        </div>
+
+        <div class="caja">
+            <a href="#" onclick="cargarContenidoMejor('Resultado1','fetchRelleno.html')">Mejor</a><br>
+        </div>
+
+        <div class="caja" id="Resultado1">
+        </div>
+
+        <div class="caja">
+            <a href="#" onclick="cargarContenido_then('Resultado2','fetchRelleno.html')">.then()</a>
+        </div>
+
+        <div class="caja" id="Resultado2">
+        </div>
+
+        <div class="caja">
+            <h3>Opciones:</h3>
+            <a href="#" onclick="cargarContenidoFacil('Resultado0','fetchRelleno.html')">Facil</a><br>
+            <a href="#" onclick="cargarContenidoMejor('Resultado1','fetchRelleno.html')">Mejor</a><br>
+            <a href="#" onclick="cargarContenido_then('Resultado2','fetchRelleno.html')">.then()</a>
+        </div>
+        <div class="caja" id="Resultado3">
+            <h3>Ejemplos de código para entender Fetch()</h3>
+            <p>Las cajas de arriba se rellenan con una página web que está en otro archivo (relleno.html); en el apartado <b>&lt;script&gt;</b> se han prepado código que maneja funciones asíncronas de JavaScript: fecth(), text(), json(), ...</p>
+            <p>Todo este código fuente, sirve para explicar progresivamente las promesas y el uso de <b>.then()</b> de manera sencilla y con un ejemplo práctico que se podrá usar en numerosos proyectos.</p>
+            <p>Pero antes de la función, por motivos didácticos, se plantea otra alternativa equivalente usando await. Dos ejemplos ilustran esta opción: uno fácil y otro mejor que añade control de errores.</p>
+        </div>
+    </div>
+</body>
+
+</html>

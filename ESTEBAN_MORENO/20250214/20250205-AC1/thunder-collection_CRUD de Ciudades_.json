@@ -1,0 +1,168 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "CRUD de Ciudades",
+    "collectionId": "d92e58d2-7d34-4e1d-82e3-dd50efa69fdd",
+    "dateExported": "2025-02-14T13:07:14.427Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9c95b5d3-5022-480e-ac39-a807744000bb",
+            "colId": "d92e58d2-7d34-4e1d-82e3-dd50efa69fdd",
+            "containerId": "",
+            "name": "Ver TODAS",
+            "url": "/civitas/",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2025-02-13T11:11:48.644Z",
+            "modified": "2025-02-14T07:47:14.589Z",
+            "headers": []
+        },
+        {
+            "_id": "aa0018b8-72ff-49ed-9c39-5b3a60d1eaef",
+            "colId": "d92e58d2-7d34-4e1d-82e3-dd50efa69fdd",
+            "containerId": "",
+            "name": "Ver CIUDAD",
+            "url": "/civitas/656",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-02-13T11:11:48.640Z",
+            "modified": "2025-02-13T11:40:37.659Z",
+            "headers": []
+        },
+        {
+            "_id": "265c0901-a1ca-426d-ba6a-18138afb3361",
+            "colId": "d92e58d2-7d34-4e1d-82e3-dd50efa69fdd",
+            "containerId": "",
+            "name": "Ver ciudad FILTRADA por CARACTER",
+            "url": "/filtro?CountryCode=FRA&Caracter=T",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-02-13T12:21:59.055Z",
+            "modified": "2025-02-14T13:05:03.109Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "CountryCode",
+                    "value": "FRA",
+                    "isPath": false
+                },
+                {
+                    "name": "Caracter",
+                    "value": "T",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "32526240-f505-4760-9220-af2d7458128f",
+            "colId": "d92e58d2-7d34-4e1d-82e3-dd50efa69fdd",
+            "containerId": "",
+            "name": "Ver PAISES x CONTINENTE",
+            "url": "/paises/South America",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-02-14T10:19:40.310Z",
+            "modified": "2025-02-14T12:14:11.206Z",
+            "headers": []
+        },
+        {
+            "_id": "3d9c4fcf-9ecf-47ad-b8ff-307bed81ae36",
+            "colId": "d92e58d2-7d34-4e1d-82e3-dd50efa69fdd",
+            "containerId": "",
+            "name": "INSERTAR nueva",
+            "url": "/civitas?Name=Nueva Ciudad 44&CountryCode=ESP&District=Cantabria&Population=1",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-02-13T11:11:48.641Z",
+            "modified": "2025-02-14T08:23:29.478Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "Name",
+                    "value": "Nueva Ciudad 44",
+                    "isPath": false
+                },
+                {
+                    "name": "CountryCode",
+                    "value": "ESP",
+                    "isPath": false
+                },
+                {
+                    "name": "District",
+                    "value": "Cantabria",
+                    "isPath": false
+                },
+                {
+                    "name": "Population",
+                    "value": "1",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "02af1f54-b427-4507-97fe-de208fe7d86c",
+            "colId": "d92e58d2-7d34-4e1d-82e3-dd50efa69fdd",
+            "containerId": "",
+            "name": "Ver PAISES x EUROPA",
+            "url": "/paises",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-02-14T10:42:14.862Z",
+            "modified": "2025-02-14T10:53:29.473Z",
+            "headers": []
+        },
+        {
+            "_id": "92ae7103-2e5d-4008-b5ae-bde8fd9e2a7d",
+            "colId": "d92e58d2-7d34-4e1d-82e3-dd50efa69fdd",
+            "containerId": "",
+            "name": "DELETE ciudad",
+            "url": "/civitas/4070",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2025-02-13T11:11:48.642Z",
+            "modified": "2025-02-13T11:11:48.642Z",
+            "headers": []
+        },
+        {
+            "_id": "f5cbdf52-1ad2-4ef2-9b93-1029e6de7f5f",
+            "colId": "d92e58d2-7d34-4e1d-82e3-dd50efa69fdd",
+            "containerId": "",
+            "name": "UPDATE ciudad",
+            "url": "/civitas/?Name=New City 44&CountryCode=ESP&District=Cantabria&Population=4",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2025-02-13T11:11:48.643Z",
+            "modified": "2025-02-14T08:24:21.772Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "Name",
+                    "value": "New City 44",
+                    "isPath": false
+                },
+                {
+                    "name": "CountryCode",
+                    "value": "ESP",
+                    "isPath": false
+                },
+                {
+                    "name": "District",
+                    "value": "Cantabria",
+                    "isPath": false
+                },
+                {
+                    "name": "Population",
+                    "value": "4",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:3000"
+        }
+    },
+    "ref": "UdaiE-tWbBR13FzxYGdWquc1PyXnZwaz1DP6ApAUAJ-UDGoI2ABiWMfAq01_Dh0FQmwQtFlbbSCaBYZbLvuP4w"
+}

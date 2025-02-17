@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "curl": "^0.1.4",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  },
+  "name": "xpapi",
+  "version": "1.0.0",
+  "main": "00_xpBase.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

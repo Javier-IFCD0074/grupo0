@@ -1,0 +1,39 @@
+function cargarTablaJSON(clave) {
+    let parametros='';
+
+    // let tieneClave=false;
+    // if (clave) tieneClave=true;
+    // console.log('clave=',clave);
+
+    // Preparar la peticion
+    let opcion = 'datos'; // Por defecto usar el API de animales
+
+    if (estado=='mundo') {
+        opcion='civitas';  // Valor por defecto
+
+        switch(clave) {
+            case '#nombreContinente': // Lista de paises por continente
+                let codigo=dameValor(clave);
+                parametros='/'+codigo; // Para completar la url, poniendo el código al final
+                break;
+            case '#filtroCiudades':  // Lista de ciudades filtrada por inicial y país
+                let pais=dameValor('codigoPais');
+                let letra=dameValor('inicialCiudad');
+                parametros='?codigoPais='+pais+'&inicial='+letra;
+                break;
+            case '#codigoCiudad': // Devuelve una ciudad segun el código
+                codigo=dameValor(clave);
+                parametros='/'+codigo; // Para completar la url, poniendo el código al final
+                break;
+            default: // Me da todos los continentes (7)
+                opcion='continentes';
+        }
+
+    }
+    // else {} // Apartado para animales y otras aplicaciones futuras
+    
+    let url = dameURLbase(opcion)+parametros; // URL completa
+    console.log('cargarTablaJSON() llama a esta URL:',url);
+
+    leerDatosAPI(url, generaTablaHTML);
+}
